@@ -1,0 +1,86 @@
+2026-10-13T21:00:50.700207248Z main WARN Advanced terminal features are not available in this environment
+[00:00:51] [main/INFO] [ne.ne.fm.st.Entrypoint/]: JVM Uptime at startup: 338ms
+[00:00:51] [main/INFO] [ne.ne.fm.lo.FMLLoader/]: Starting FancyModLoader version 11.0.15 (DEDICATED_SERVER in DEV)
+[00:00:51] [main/INFO] [ne.ne.fm.lo.FMLLoader/]: Game directory: /root/home/forks/Staaaaaaaaaaaack/neoforge/run-vanilla
+[00:00:51] [main/INFO] [ne.ne.fm.lo.EarlyServiceDiscovery/]: Found 2 early service jars (out of 93) in 50ms
+[00:00:51] [main/INFO] [ne.ne.fm.lo.FMLLoader/]: Loading FML Early Services:
+[00:00:51] [main/INFO] [ne.ne.fm.lo.FMLLoader/]:  - /root/.gradle/caches/modules-2/files-2.1/net.neoforged.fancymodloader/earlydisplay/11.0.15/b254aa4ec40828f8ce65411dcb7fb9f6ce008064/earlydisplay-11.0.15.jar
+[00:00:51] [main/INFO] [ne.ne.fm.lo.FMLLoader/]:  - /root/.gradle/caches/modules-2/files-2.1/net.neoforged.fancymodloader/loader/11.0.15/69ddd98736a6b095783523404d1af8992842722/loader-11.0.15.jar
+[00:00:51] [main/INFO] [ne.ne.fm.lo.ImmediateWindowHandler/]: Not loading early display in headless mode.
+[00:00:51] [main/INFO] [ne.ne.fm.lo.mo.lo.GameLocator/]: Detected a joined NeoForge and Minecraft configuration. Applying filtering...
+[00:00:51] [main/INFO] [ne.ne.fm.lo.mo.lo.InDevFolderLocator/CORE]: Got mod coordinates stxck_verification%%/root/home/forks/Staaaaaaaaaaaack/neoforge/build/classes/java/verification:stxck_verification%%/root/home/forks/Staaaaaaaaaaaack/neoforge/build/resources/verification from env
+[00:00:52] [main/INFO] [ne.ne.fm.lo.mo.lo.JarInJarDependencyLocator/]: Found 2 dependencies adding them to mods collection
+[00:00:52] [main/INFO] [ne.ne.fm.lo.mo.ModDiscoverer/]: 
+     Mod List:
+		Name Version (Mod Id)
+
+		Minecraft 26.1.2 (minecraft)
+		NeoForge 26.1.2.114 (neoforge)
+		Stxck runtime verification (development only) 1.0 (stxck_verification)
+[00:00:53] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/root/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.17.4+mixin.0.8.7/5f66cc9f59b8efaa942155a3d5a30599bf6640dd/sponge-mixin-0.17.4+mixin.0.8.7.jar Service=FML Env=SERVER
+[00:00:53] [main/INFO] [ne.ne.fm.lo.FMLLoader/]: Loading FML Plugins:
+[00:00:53] [main/INFO] [ne.ne.fm.lo.FMLLoader/]:  - /root/.gradle/caches/modules-2/files-2.1/net.neoforged/neoforge/26.1.2.114/7ba494baad5d0dd6470cf38bad318e81b2a5496f/neoforge-26.1.2.114-universal.jar > net.neoforged.neoforge-coremods-26.1.2.114.jar
+[00:00:53] [main/INFO] [ne.ne.fm.lo.FMLLoader/]: Building game content classloader:
+ - minecraft (composite(filtered(jar(/root/home/forks/Staaaaaaaaaaaack/neoforge/build/moddev/artifacts/minecraft-patched-26.1.2.114.jar)), filtered(jar(/root/home/forks/Staaaaaaaaaaaack/neoforge/build/moddev/artifacts/minecraft-patched-26.1.2.114.jar))))
+ - mixinextras.neoforge (jar(/root/.gradle/caches/modules-2/files-2.1/net.neoforged/neoforge/26.1.2.114/7ba494baad5d0dd6470cf38bad318e81b2a5496f/neoforge-26.1.2.114-universal.jar > mixinextras-neoforge-0.5.5.jar))
+ - neoforge (composite(filtered(jar(/root/.gradle/caches/modules-2/files-2.1/net.neoforged/neoforge/26.1.2.114/7ba494baad5d0dd6470cf38bad318e81b2a5496f/neoforge-26.1.2.114-universal.jar))))
+ - net.neoforged.fml.generated (empty(VirtualJar/net.neoforged.fml.generated))
+ - stxck_verification (composite(folder(/root/home/forks/Staaaaaaaaaaaack/neoforge/build/classes/java/verification), folder(/root/home/forks/Staaaaaaaaaaaack/neoforge/build/resources/verification)))
+[00:00:53] [main/INFO] [ne.ne.fm.lo.FMLLoader/]: Built game content classloader in 69ms
+[00:00:57] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.5).
+[00:01:11] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[00:01:11] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[00:01:11] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[00:01:12] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[00:01:12] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[00:01:12] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [time, set, time] and [time, set, timemarker] with inputs: [0, 0s, 0d, 0t]
+[00:01:12] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [time, set, timemarker] and [time, set, time] with inputs: [012]
+[00:01:12] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [time, of, clock, set, time] and [time, of, clock, set, timemarker] with inputs: [0, 0s, 0d, 0t]
+[00:01:12] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [time, of, clock, set, timemarker] and [time, of, clock, set, time] with inputs: [012]
+[00:01:12] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [waypoint, modify, waypoint, color, reset] and [waypoint, modify, waypoint, color, color] with inputs: [reset]
+[00:01:12] [modloading-worker-0/INFO] [ne.ne.ne.co.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 26.1.2.114, for MC 26.1.2
+[00:01:13] [main/INFO] [mojang/YggdrasilAuthenticationService]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[00:01:13] [main/WARN] [ne.ne.ne.co.CommonHooks/WP]: The following mods have version differences that were not resolved:
+neoforge (version 26.1.2.109 -> 26.1.2.114)
+Things may not work well.
+[00:01:18] [main/INFO] [minecraft/RecipeManager]: Loaded 1515 recipes
+[00:01:18] [main/INFO] [minecraft/AdvancementTree]: Loaded 1617 advancements
+[00:01:18] [main/INFO] [ne.ne.ne.co.cr.RecipePriorityManager/]: Loaded 0 recipe priority overrides
+[00:01:18] [Server thread/INFO] [minecraft/DedicatedServer]: Starting minecraft server version 26.1.2
+[00:01:18] [Server thread/INFO] [minecraft/DedicatedServer]: Loading properties
+[00:01:18] [Server thread/INFO] [minecraft/DedicatedServer]: Default game type: SURVIVAL
+[00:01:18] [Server thread/INFO] [minecraft/MinecraftServer]: Generating keypair
+[00:01:18] [Server thread/INFO] [minecraft/DedicatedServer]: Starting Minecraft server on 127.0.0.1:25582
+[00:01:19] [Server thread/WARN] [minecraft/DedicatedServer]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[00:01:19] [Server thread/WARN] [minecraft/DedicatedServer]: The server will make no attempt to authenticate usernames. Beware.
+[00:01:19] [Server thread/WARN] [minecraft/DedicatedServer]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[00:01:19] [Server thread/WARN] [minecraft/DedicatedServer]: To change this, set "online-mode" to "true" in the server.properties file.
+[00:01:19] [Server thread/INFO] [minecraft/DedicatedServer]: Preparing level "world"
+[00:01:19] [Server thread/INFO] [minecraft/LoggingLevelLoadListener]: Loading 25 persistent chunks...
+[00:01:19] [Server thread/INFO] [minecraft/LoggingLevelLoadListener]: Preparing spawn area: 28%
+[00:01:20] [Server thread/INFO] [minecraft/LoggingLevelLoadListener]: Time elapsed: 328 ms
+[00:01:20] [Server thread/INFO] [minecraft/DedicatedServer]: Done (0.962s)! For help, type "help"
+[00:01:20] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[00:01:20] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[00:01:20] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[00:01:20] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[00:01:20] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[00:01:20] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[00:01:20] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved
+[00:01:20] [Server thread/INFO] [ne.ne.ne.se.pe.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
+STXCK_BASELINE vanilla,100,12.314,2.608,252.064,160.9,2,40,100
+STXCK_BASELINE vanilla,1000,87.265,18.724,1865.323,234.9,16,40,1000
+[00:01:34] [Server thread/WARN] [minecraft/MinecraftServer]: Can't keep up! Is the server overloaded? Running 2493ms or 49 ticks behind
+STXCK_BASELINE vanilla,5000,73.892,730.485,72738.658,318.1,79,40,5000
+[00:02:45] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping server
+[00:02:45] [Server thread/INFO] [minecraft/MinecraftServer]: Saving players
+[00:02:45] [Server thread/INFO] [minecraft/MinecraftServer]: Saving worlds
+[00:02:45] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[00:02:45] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[00:02:45] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[00:02:45] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[00:02:45] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[00:02:45] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[00:02:45] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved
+[00:02:45] [main/INFO] [ne.ne.fm.lo.FMLLoader/]: Closing FML Loader 7d9d5fcb
+[00:02:45] [main/INFO] [ne.ne.fm.ModLoader/]: Clearing ModLoader

@@ -4,89 +4,57 @@ package me.frankv.staaaaaaaaaaaack;
 import me.frankv.staaaaaaaaaaaack.config.StxckClientConfig;
 import me.frankv.staaaaaaaaaaaack.config.StxckCommonConfig;
 import me.frankv.staaaaaaaaaaaack.mixin.ItemEntityAccessor;
-import me.frankv.staaaaaaaaaaaack.mixin.ItemStackAccessor;
-import net.minecraft.core.Holder;
+
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
 
 import java.util.Objects;
 import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 public class Stxck {
     public static final String MODID = "staaaaaaaaaaaack";
 
-    public static final TagKey<Item> BLACK_LIST_TAG = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MODID, "blacklist"));
+    public static final TagKey<Item> BLACK_LIST_TAG = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MODID, "blacklist"));
     public static final String EXTRA_ITEM_COUNT_TAG = "StxckExtraItemCount";
-    private static Set<Item> itemList;
-    private static Set<ResourceLocation> dimensionList;
 
     public static StxckCommonConfig commonConfig;
     public static StxckClientConfig clientConfig;
-    private static EntityDataAccessor<Integer> DATA_EXTRA_ITEM_COUNT;
 
 
-    private static Set<Item> getItemList() {
-        if (itemList == null) {
-            itemList = commonConfig.getItemList().stream()
-                    .map(ResourceLocation::parse)
-                    .map(BuiltInRegistries.ITEM::get)
-                    .filter(Optional::isPresent)
-                    .map(Optional::get)
-                    .map(Holder.Reference::value)
-                    .collect(Collectors.toUnmodifiableSet());
+
+    private static boolean itemMatches(ItemStack stack) {
+        for (String entry : commonConfig.getItemList()) {
+            boolean tag = entry.startsWith("#");
+            Identifier id = Identifier.tryParse(tag ? entry.substring(1) : entry);
+            if (id == null) continue;
+            if (tag ? stack.is(TagKey.create(Registries.ITEM, id))
+                    : BuiltInRegistries.ITEM.getKey(stack.getItem()).equals(id)) return true;
         }
-        return itemList;
-    }
-
-    private static Set<ResourceLocation> getDimensionList() {
-        if (dimensionList == null) {
-            dimensionList = commonConfig.getDimensionList().stream()
-                    .map(ResourceLocation::parse)
-                    .collect(Collectors.toUnmodifiableSet());
-        }
-        return dimensionList;
-    }
-
-    public static void setDataExtraItemCount(EntityDataAccessor<Integer> entityDataAccessor) {
-        if (DATA_EXTRA_ITEM_COUNT != null) return;
-        DATA_EXTRA_ITEM_COUNT = entityDataAccessor;
+        return false;
     }
 
     public static void refillItemStack(ItemEntity entity) {
-        var extraItemCount = getExtraItemCount(entity);
-        if (extraItemCount <= 0) return;
-
-        var stack = entity.getItem();
-        Optional.ofNullable(((ItemStackAccessor) (Object) stack).accessItem())
-                .map(Item::getDefaultMaxStackSize)
-                .ifPresent(maxSize -> {
-                    if (stack.getCount() == maxSize) return;
-                    var x = maxSize - stack.getCount();
-                    var refillCount = Math.min(x, extraItemCount);
-                    stack.grow(refillCount);
-                    setExtraItemCount(entity, extraItemCount - refillCount);
-                    entity.setItem(stack.copy());
-                });
+        if (entity.level().isClientSide() || entity.isRemoved()) return;
+        int extra = getExtraItemCount(entity);
+        ItemStack stack = entity.getItem();
+        if (extra <= 0 || stack.isEmpty()) return;
+        int refill = Math.min(Math.max(0, stack.getMaxStackSize() - stack.getCount()), extra);
+        if (refill > 0) {
+            setExtraItemCount(entity, extra - refill);
+            entity.setItem(stack.copyWithCount(stack.getCount() + refill));
+        }
     }
 
     public static boolean areMergable(ItemEntity itemEntity, ItemEntity itemEntity1) {
-        var maxExtraSize = commonConfig.getMaxSize();
-        if (maxExtraSize - getExtraItemCount(itemEntity) < getTotalCount(itemEntity1)
-                && maxExtraSize - getExtraItemCount(itemEntity1) < getTotalCount(itemEntity)
-        ) {
-            return false;
-        }
+        if (itemEntity == itemEntity1 || !isMergable(itemEntity) || !isMergable(itemEntity1)
+                || isBlackListItem(itemEntity) || isBlackListItem(itemEntity1)) return false;
+        if (getTotalCount(itemEntity) + getTotalCount(itemEntity1) > commonConfig.getMaxSize()) return false;
 
         var itemStack = itemEntity.getItem();
         var itemStack1 = itemEntity1.getItem();
@@ -95,7 +63,7 @@ public class Stxck {
     }
 
     public static void grow(ItemEntity entity, int count) {
-        setExtraItemCount(entity, getExtraItemCount(entity) + count);
+        setExtraItemCount(entity, Math.addExact(getExtraItemCount(entity), count));
         refillItemStack(entity);
     }
 
@@ -103,7 +71,9 @@ public class Stxck {
         var accessor = (ItemEntityAccessor) entity;
         var pickupDelay = accessor.getPickupDelay();
         var age = accessor.getAge();
-        return entity.isAlive() && pickupDelay != 32767 && age != -32768 && age < 6000;
+        return entity.isAlive() && ((PileState) entity).stxck$mergingAllowed() && !entity.getItem().isEmpty() && pickupDelay != 32767
+                && age != -32768 && age < entity.lifespan
+                && Math.max(entity.tickCount, ((PileState) entity).stxck$elapsedTicks()) >= commonConfig.getMergeDelayTicks();
     }
 
     public static Optional<String> getOverlayText(ItemEntity entity) {
@@ -113,7 +83,7 @@ public class Stxck {
             case ITEM_COUNT -> getTotalCountOverlayText(entity, alwaysShowItemCount);
             case STACK_COUNT -> {
                 var maxStackSize = entity.getItem().getMaxStackSize();
-                var stackCount = (int) Math.ceil((double) getTotalCount(entity) / maxStackSize);
+                long stackCount = (getTotalCount(entity) + maxStackSize - 1L) / maxStackSize;
                 var show = stackCount > 1 || alwaysShowItemCount;
                 yield show ? Optional.of(String.format("%dx", stackCount)) : Optional.empty();
             }
@@ -138,29 +108,20 @@ public class Stxck {
         return Optional.empty();
     }
 
-    public static int getTotalCount(ItemEntity entity) {
-        return entity.getItem().getCount() + getExtraItemCount(entity);
+    public static long getTotalCount(ItemEntity entity) {
+        return (long) entity.getItem().getCount() + getExtraItemCount(entity);
     }
 
     public static int getExtraItemCount(ItemEntity entity) {
-        return entity.getEntityData().get(DATA_EXTRA_ITEM_COUNT);
+        return entity.hasData(StxckAttachments.EXTRA) ? entity.getData(StxckAttachments.EXTRA) : 0;
     }
 
     public static void setExtraItemCount(ItemEntity entity, int count) {
-        entity.getEntityData().set(DATA_EXTRA_ITEM_COUNT, count);
-    }
-
-    public static boolean tryRefillItemStackOnEntityRemove(Entity entity, Entity.RemovalReason reason) {
-        if (!entity.getType().equals(EntityType.ITEM) || !reason.equals(Entity.RemovalReason.DISCARDED)) return false;
-
-        var itemEntity = (ItemEntity) entity;
-        if (getExtraItemCount(itemEntity) <= 0) return false;
-
-        var copied = itemEntity.getItem().copy();
-        itemEntity.setItem(copied);
-        copied.setCount(0);
-        refillItemStack(itemEntity);
-        return true;
+        if (count < 0) throw new IllegalArgumentException("Negative reserve");
+        if (getExtraItemCount(entity) != count) entity.setData(StxckAttachments.EXTRA, count);
+        if (count > 0 && !entity.getItem().isEmpty()) {
+            ((PileState) entity).stxck$remember(entity.getItem());
+        }
     }
 
     public static void tryToMerge(ItemEntity itemEntity, ItemEntity itemEntity1) {
@@ -168,7 +129,7 @@ public class Stxck {
     }
 
     public static void tryToMerge(ItemEntity itemEntity, ItemEntity itemEntity1, boolean mergeToExisted) {
-        if (Objects.equals(itemEntity.getOwner(), itemEntity1.getOwner())
+        if (Objects.equals(itemEntity.getTarget(), itemEntity1.getTarget())
                 && areMergable(itemEntity, itemEntity1)
         ) {
             if (mergeToExisted || getTotalCount(itemEntity1) < getTotalCount(itemEntity)) {
@@ -180,13 +141,17 @@ public class Stxck {
     }
 
     public static void merge(ItemEntity consumer, ItemEntity supplier) {
+        if (consumer.level().isClientSide() || !areMergable(consumer, supplier)) return;
         var consumerAccessor = (ItemEntityAccessor) consumer;
         var supplierAccessor = (ItemEntityAccessor) supplier;
 
         consumerAccessor.setPickupDelay(Math.max(consumerAccessor.getPickupDelay(), supplierAccessor.getPickupDelay()));
         consumerAccessor.setAge(Math.min(consumerAccessor.getAge(), supplierAccessor.getAge()));
 
-        grow(consumer, getTotalCount(supplier));
+        long total = getTotalCount(consumer) + getTotalCount(supplier);
+        int visible = consumer.getItem().getCount();
+        setExtraItemCount(consumer, Math.toIntExact(total - visible));
+        refillItemStack(consumer);
 
         setExtraItemCount(supplier, 0);
         supplier.setItem(ItemStack.EMPTY);
@@ -194,8 +159,10 @@ public class Stxck {
     }
 
     public static boolean isBlackListItem(ItemEntity itemEntity) {
-        var dim = itemEntity.level().dimension().location();
-        if (getDimensionList().contains(dim) ^ commonConfig.isDimensionListAsWhitelist()) {
+        // Custom entity types may carry state/behavior a vanilla remainder cannot reproduce.
+        if (itemEntity.getType() != EntityType.ITEM) return true;
+        var dim = itemEntity.level().dimension().identifier();
+        if (commonConfig.getDimensionList().contains(dim.toString()) ^ commonConfig.isDimensionListAsWhitelist()) {
             return true;
         }
 
@@ -205,6 +172,6 @@ public class Stxck {
         }
 
         return itemStack.is(BLACK_LIST_TAG)
-                || getItemList().contains(itemStack.getItem()) ^ commonConfig.isItemListAsWhitelist();
+                || (itemMatches(itemStack) ^ commonConfig.isItemListAsWhitelist());
     }
 }

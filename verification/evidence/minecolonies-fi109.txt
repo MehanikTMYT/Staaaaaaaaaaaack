@@ -1,0 +1,1 @@
+PASS real CitizenItemUtils.tryPickupItemEntity and InventoryCitizen, repeated stale handle: inventory=1000 ground=0. ICitizenData fixture; full colony AI not exercised.

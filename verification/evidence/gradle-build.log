@@ -1,0 +1,29 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.2.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :neoforge:createMinecraftArtifacts UP-TO-DATE
+> Task :neoforge:compileJava
+> Task :neoforge:processResources UP-TO-DATE
+> Task :neoforge:classes
+> Task :neoforge:jarJar NO-SOURCE
+> Task :neoforge:jar
+> Task :neoforge:assemble
+> Task :neoforge:compileTestJava UP-TO-DATE
+> Task :neoforge:processTestResources NO-SOURCE
+> Task :neoforge:testClasses UP-TO-DATE
+> Task :neoforge:test
+> Task :neoforge:check
+> Task :neoforge:build
+> Task :neoforge:downloadAssets UP-TO-DATE
+> Task :neoforge:preparePersistenceServerRun UP-TO-DATE
+> Task :neoforge:prepareSmokeServerRun UP-TO-DATE
+> Task :neoforge:prepareVanillaBenchmarkRun UP-TO-DATE
+> Task :neoforge:prepareVerifyClientRun UP-TO-DATE
+> Task :neoforge:prepareVerifyServerRun UP-TO-DATE
+> Task :neoforge:compileVerificationJava
+> Task :neoforge:processVerificationResources UP-TO-DATE
+> Task :neoforge:verificationClasses
+> Task :neoforge:exportVerificationLaunches
+
+BUILD SUCCESSFUL in 27s
+15 actionable tasks: 5 executed, 10 up-to-date
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.2.1/userguide/configuration_cache_enabling.html

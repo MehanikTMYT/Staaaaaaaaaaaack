@@ -1,0 +1,5 @@
+["Item count overlay"]
+minItemCountRenderDistance = 8
+overlaySizeMultiplier = 0.8
+alwaysShowItemCount = false
+overlayDisplayMode = "ITEM_COUNT"

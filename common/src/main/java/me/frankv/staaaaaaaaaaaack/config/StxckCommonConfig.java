@@ -12,6 +12,7 @@ public interface StxckCommonConfig {
     double getMaxMergeDistanceHorizontal();
     double getMaxMergeDistanceVertical();
     int getMaxSize();
+    default int getMergeDelayTicks() { return 0; }
     boolean isEnableForUnstackableItem();
     boolean isItemListAsWhitelist();
     List<? extends String> getItemList();

@@ -9,6 +9,7 @@ public class StxckNeoForgeCommonConfig implements StxckCommonConfig {
     private final ModConfigSpec.DoubleValue maxMergeDistanceHorizontal;
     private final ModConfigSpec.DoubleValue maxMergeDistanceVertical;
     private final ModConfigSpec.IntValue maxSize;
+    private final ModConfigSpec.IntValue mergeDelayTicks;
     private final ModConfigSpec.BooleanValue enableForUnstackableItem;
     private final ModConfigSpec.BooleanValue itemListAsWhitelist;
     private final ModConfigSpec.ConfigValue<List<? extends String>> itemList;
@@ -29,8 +30,10 @@ public class StxckNeoForgeCommonConfig implements StxckCommonConfig {
                 .comment("Default: 0.0, Minecraft default: 0.0")
                 .defineInRange("maxMergeDistanceVertical", 0d, 0d, 10d);
 
+        mergeDelayTicks = builder.comment("Minimum entity ticks before merging; 0 disables deferred merge. Does not delay pickup.")
+                .defineInRange("mergeDelayTicks", 0, 0, 1200);
         maxSize = builder
-                .comment("The maximum number of extra items that an item entity can hold.")
+                .comment("The maximum total item count of a merged pile; existing larger piles are preserved.")
                 .comment(String.format("Default: %d", Integer.MAX_VALUE))
                 .defineInRange("maxSize", Integer.MAX_VALUE, 1, Integer.MAX_VALUE);
 
@@ -74,6 +77,9 @@ public class StxckNeoForgeCommonConfig implements StxckCommonConfig {
     public double getMaxMergeDistanceVertical() {
         return maxMergeDistanceVertical.get();
     }
+
+    @Override
+    public int getMergeDelayTicks() { return mergeDelayTicks.get(); }
 
     @Override
     public int getMaxSize() {

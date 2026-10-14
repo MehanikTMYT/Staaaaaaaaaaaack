@@ -1,0 +1,1 @@
+PASS world restart, components, actual chunk unload and reload: 1000 items

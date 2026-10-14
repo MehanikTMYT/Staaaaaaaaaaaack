@@ -1,6 +1,1 @@
-{
-  "pack": {
-    "description": "staaaaaaaaaaaack resources",
-    "pack_format": 15
-  }
-}
+{"pack":{"description":"Staaaaaaaaaaaack resources","min_format":84,"max_format":[101,1]}}

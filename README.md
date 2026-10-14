@@ -21,3 +21,19 @@ The name contains 12 'a's btw. 🍔
 |:----------:|:--------:|:------:|:--------:|
 |   1.21.8   |   main   |  main  |    -     |
 |   1.21.1   |  active  | active |    -     |
+
+## Minecraft 26.1.2 / NeoForge port
+
+The `port/26.1.2` branch builds **NeoForge 26.1.2.114** with **Java 25 / Gradle 9.2.1**.
+Run `./gradlew :neoforge:build`. The release JAR is in `neoforge/build/libs/`.
+Fabric sources remain in the repository but are not built by this NeoForge-specific branch.
+
+The reserve remains saved under `StxckExtraItemCount`. A new optional
+`StxckExtraItemTemplate` field preserves its components if another mod changes the exposed stack.
+Existing configuration keys are retained. `maxSize` now caps the **total pile count**, instead of
+only the extra reserve; already saved larger piles are preserved. `mergeDelayTicks=0` keeps immediate
+merging; setting it to `10` enables deferred merging without adding a pickup delay. Item lists also
+accept `#namespace:tag` entries. The explicit `staaaaaaaaaaaack:blacklist` tag always excludes items.
+
+See [verification instructions](verification/README.md) and [the port report](PORT_REPORT.md) for
+runtime evidence and the limits of the compatibility and performance testing.

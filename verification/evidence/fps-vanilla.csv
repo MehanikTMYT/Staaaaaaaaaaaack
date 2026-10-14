@@ -1,0 +1,4 @@
+mode,items,mean_fps,min_fps,max_fps,samples
+vanilla,100,11.425,0,18,120
+vanilla,1000,18.983333333333334,18,20,120
+vanilla,5000,15.806722689075631,14,18,119

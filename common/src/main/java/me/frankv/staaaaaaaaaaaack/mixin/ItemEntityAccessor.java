@@ -9,6 +9,11 @@ import org.spongepowered.asm.mixin.gen.Invoker;
 
 @Mixin(ItemEntity.class)
 public interface ItemEntityAccessor {
+    @Invoker("mergeWithNeighbours")
+    void stxck$mergeNeighbours();
+    @Accessor("DATA_ITEM")
+    static net.minecraft.network.syncher.EntityDataAccessor<ItemStack> stxck$itemData() { throw new AssertionError(); }
+
     @Accessor
     int getPickupDelay();
 

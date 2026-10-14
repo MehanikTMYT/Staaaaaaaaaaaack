@@ -1,0 +1,11 @@
+# Suggested starting point for the technology pack; not applied to production.
+["Item merge settings"]
+maxMergeDistanceHorizontal = 0.5
+maxMergeDistanceVertical = 0.0
+maxSize = 65536
+mergeDelayTicks = 0
+enableForUnstackableItem = false
+itemListAsWhitelist = false
+itemList = []
+dimensionListAsWhitelist = false
+dimensionList = []

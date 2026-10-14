@@ -1,0 +1,9 @@
+FUNCTIONAL PASS assertions=6138
+PHYSICAL_HOPPERS PASS stored=640 ground=360
+mode,count,spawn_ms,mean_mspt,server_thread_cpu_ms,peak_heap_MiB,entities,merge_tick,total
+immediate,100,8.497,1.711,166.841,192.3,1,1,100
+immediate,1000,33.566,1.470,139.971,198.8,1,1,1000
+immediate,5000,76.429,1.208,115.350,220.3,1,1,5000
+deferred10,100,3.632,1.767,170.068,224.8,1,10,100
+deferred10,1000,17.584,7.883,779.951,251.3,1,10,1000
+deferred10,5000,27.985,199.432,19888.351,328.8,1,10,5000

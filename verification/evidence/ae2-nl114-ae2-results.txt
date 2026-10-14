@@ -1,0 +1,1 @@
+PASS real ItemPickupStrategy full/partial acceptance and stale entity: 1000 stored each; PickupSink counter fixture, no live ME network or Import Bus.

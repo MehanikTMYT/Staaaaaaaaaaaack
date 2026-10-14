@@ -1,0 +1,1 @@
+count_sync=true inventory=1000 fps_mean=15.191919191919192

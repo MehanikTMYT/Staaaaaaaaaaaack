@@ -1,0 +1,1 @@
+PASS real GachaCommand.executeGacha with named loot: free inventory 64 + ground1000; full inventory ground1064, owner preserved, fake reward excluded. FakePlayer, no UI test.

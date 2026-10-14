@@ -2,16 +2,14 @@
   "required": true,
   "minVersion": "0.8",
   "package": "me.frankv.staaaaaaaaaaaack.mixin",
-  "compatibilityLevel": "JAVA_21",
-  "refmap": "staaaaaaaaaaaack.refmap.json",
+  "compatibilityLevel": "JAVA_25",
   "mixins": [
     "ItemEntityAccessor",
-    "ItemEntityMixin",
-    "ItemStackAccessor"
+    "ItemEntityMixin"
   ],
   "client": [
-    "client.ClientPacketListenerMixin",
-    "client.LevelRendererMixin"
+    "client.ItemEntityRendererMixin",
+    "client.ItemEntityRenderStateMixin"
   ],
   "injectors": {
     "defaultRequire": 1

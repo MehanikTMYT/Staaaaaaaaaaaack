@@ -1,83 +1,106 @@
-plugins {
-    id 'io.github.CDAGaming.cursegradle' version '1.+'
-    id "com.modrinth.minotaur" version "2.+"
-    id 'net.neoforged.gradle.userdev' version '7.0.192'
-    id 'net.neoforged.gradle.mixin' version '7.0.192'
-}
-
-archivesBaseName = "${mod_id}-neoforge"
-
-configurations {
-    runtimeClasspath.extendsFrom localRuntime
-}
-
-runs {
-    configureEach {
-        systemProperty 'forge.logging.markers', 'REGISTRIES'
-        systemProperty 'mixin.debug.export', 'true'
-        systemProperty 'forge.logging.console.level', 'debug'
-
-        modSource project.sourceSets.main
-    }
-
-    client {
-        systemProperty 'forge.enabledGameTestNamespaces', project.mod_id
-    }
-
-    server {
-        systemProperty 'forge.enabledGameTestNamespaces', project.mod_id
-        programArgument '--nogui'
+plugins { id 'net.neoforged.moddev' version '2.0.143' }
+base { archivesName = 'staaaaaaaaaaaack-neoforge' }
+sourceSets.main.java.srcDir('../common/src/main/java')
+sourceSets.main.resources.srcDir('../common/src/main/resources')
+neoForge {
+    version = project.neo_version
+    mods { staaaaaaaaaaaack { sourceSet sourceSets.main } }
+    runs {
+        client { client() }
+        server { server(); programArgument '--nogui' }
     }
 }
-
-sourceSets.main.resources { srcDir 'src/generated/resources' }
-
+jar {
+    from('../LICENSE')
+    manifest { attributes('Implementation-Version': project.version, 'Implementation-Vendor': 'frankV') }
+}
 dependencies {
-    implementation "net.neoforged:neoforge:${neo_version}"
-    implementation project(":common")
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.11.4'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
+test { useJUnitPlatform(); maxHeapSize = '512m' }
 
-tasks.compileJava {
-    source(project(":common").sourceSets.main.allSource)
+// The verification mod is present in development runs only, never in the release JAR.
+sourceSets {
+    verification {
+        compileClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.main.output
+    }
 }
-
-processResources {
-    from project(":common").sourceSets.main.resources
+configurations {
+    verificationImplementation.extendsFrom implementation
+    verificationRuntimeOnly.extendsFrom runtimeOnly
 }
-
-def ENV = System.getenv()
-def release_title = "[NeoForge] v${version}"
-
-if (ENV.CF_TOKEN) {
-    curseforge {
-        apiKey = ENV.CF_TOKEN
-        project {
-            id = curse_id
-            releaseType = release_type
-            addGameVersion "NeoForge"
-            addGameVersion "Java 21"
-            addGameVersion "Server"
-            addGameVersion "Client"
-            addGameVersion minecraft_version
-            mainArtifact(jar) {
-                it.displayName = release_title
-            }
-            changelog = rootProject.file('changelog.md')
-            changelogType = 'markdown'
+neoForge {
+    addModdingDependenciesTo(sourceSets.verification)
+    mods { stxck_verification { sourceSet sourceSets.verification } }
+    runs {
+        verifyServer {
+            server()
+            sourceSet = sourceSets.verification
+            gameDirectory = file('run-verify')
+            programArgument '--nogui'
+            jvmArgument '-Xmx1G'
+            systemProperty 'stxck.verify', 'true'
         }
     }
 }
-
-if (ENV.MODRINTH_TOKEN) {
-    modrinth {
-        token = ENV.MODRINTH_TOKEN
-        projectId = modrinth_id
-        versionType = release_type
-        versionName = release_title
-        versionNumber = "${version}+neoforge"
-        uploadFile = jar
-        gameVersions = [ minecraft_version ]
-        loaders = [ "neoforge" ]
-        changelog = rootProject.file('changelog.md').text
+neoForge.runs {
+    smokeServer {
+        server()
+        sourceSet = sourceSets.verification
+        gameDirectory = file('run-smoke')
+        programArgument '--nogui'
+        jvmArgument '-Xmx768m'
+        systemProperty 'stxck.clientServer', 'true'
+    }
+    verifyClient {
+        client()
+        sourceSet = sourceSets.verification
+        gameDirectory = file('run-client')
+        jvmArgument '-Xmx1G'
+        systemProperty 'stxck.clientVerify', 'true'
+        programArguments.addAll '--username', 'StxckTest', '--quickPlayMultiplayer', '127.0.0.1:25580', '--width', '854', '--height', '480'
+    }
+    persistenceServer {
+        server()
+        sourceSet = sourceSets.verification
+        gameDirectory = file('run-persistence')
+        programArgument '--nogui'
+        jvmArgument '-Xmx768m'
+        systemProperty 'stxck.persistence', 'true'
+    }
+}
+neoForge.runs {
+    vanillaBenchmark {
+        server()
+        sourceSet = sourceSets.verification
+        loadedMods = [neoForge.mods.stxck_verification]
+        gameDirectory = file('run-vanilla')
+        programArgument '--nogui'
+        jvmArgument '-Xmx1G'
+        systemProperty 'stxck.vanillaBenchmark', 'true'
+    }
+}
+tasks.register('exportVerificationLaunches') {
+    dependsOn 'verificationClasses', 'prepareVerifyClientRun', 'prepareSmokeServerRun', 'preparePersistenceServerRun', 'prepareVanillaBenchmarkRun', 'prepareVerifyServerRun'
+    doLast {
+        def result = [:]
+        ['runVerifyClient','runSmokeServer','runPersistenceServer','runVanillaBenchmark','runVerifyServer'].each { name ->
+            def t = tasks.named(name).get()
+            result[name] = [cwd: t.workingDir.absolutePath, argv: [t.executable] + t.allJvmArgs + ['-cp', sourceSets.verification.runtimeClasspath.asPath, t.mainClass.get()] + t.args]
+        }
+        file("$buildDir/verification-launch.json").text = groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson(result))
+    }
+}
+// A runtime assertion failure must not be reported as a successful Gradle task.
+tasks.named('runVerifyServer') {
+    doFirst { file('run-verify/verification-results.csv').text = 'RUNNING\n' }
+    doLast {
+        def result = file('run-verify/verification-results.csv').text
+        if (!result.startsWith('FUNCTIONAL PASS') || result.contains('FAIL') ||
+                result.readLines().count { it.startsWith('immediate,') || it.startsWith('deferred10,') } != 6) {
+            throw new GradleException('Runtime verification failed or incomplete; inspect run-verify/verification-results.csv')
+        }
     }
 }

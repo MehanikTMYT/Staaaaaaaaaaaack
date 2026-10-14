@@ -1,0 +1,11 @@
+FUNCTIONAL PASS assertions=6130
+mode,count,spawn_ms,mean_mspt,server_thread_cpu_ms,peak_heap_MiB,entities,merge_tick,total
+vanilla-policy,100,6.169,4.029,394.190,253.6,2,-1,100
+vanilla-policy,1000,26.819,13.778,1346.763,291.6,16,-1,1000
+vanilla-policy,5000,74.561,517.638,51594.073,298.5,79,-1,5000
+immediate,100,14.622,0.190,19.611,210.9,1,1,100
+immediate,1000,11.476,0.170,17.546,215.9,1,1,1000
+immediate,5000,60.247,0.800,72.703,237.9,1,1,5000
+deferred10,100,0.781,1.121,108.297,245.9,1,40,100
+deferred10,1000,10.861,10.688,1041.777,310.9,1,40,1000
+deferred10,5000,23.389,536.113,53295.459,307.1,1,40,5000

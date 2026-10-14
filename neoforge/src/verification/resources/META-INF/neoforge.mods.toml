@@ -1,0 +1,7 @@
+modLoader="javafml"
+loaderVersion="[11,)"
+license="MIT"
+[[mods]]
+modId="stxck_verification"
+version="1.0"
+displayName="Stxck runtime verification (development only)"

@@ -1,0 +1,14 @@
+{
+  "artifact": "/root/home/forks/Staaaaaaaaaaaack/artifacts/same-type/staaaaaaaaaaaack-neoforge-26.1.2-1.8-port.1.jar",
+  "sha256": "9666a473cdafb6e47496d3643a562f3eed31ef104df0470de57407aa1534b554",
+  "minecraft": "26.1.2",
+  "neoforge": "26.1.2.114",
+  "java": "25",
+  "gradle": "9.2.1",
+  "upstream_base": "92eddadb178818ae22e387befc7e2fa288956e3c",
+  "branch": "port/26.1.2",
+  "fps_measured_artifact_sha256": "9666a473cdafb6e47496d3643a562f3eed31ef104df0470de57407aa1534b554",
+  "fps_revision_note": "Final NL/.114 matrix uses final artifact; historical FI/.109 evidence retained with fi109 suffix.",
+  "host": "NL",
+  "fps_historical_artifact_sha256": "3d5abe62195acc98053846cbd4dd7120e8aa5eeae6c662a6f447272eb1c59512"
+}
