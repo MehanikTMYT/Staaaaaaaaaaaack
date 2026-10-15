@@ -40,3 +40,6 @@ run-gacha
 
 artifacts/
 __pycache__/
+
+# Isolated Mixed verification worlds and client assets
+run-mixed*

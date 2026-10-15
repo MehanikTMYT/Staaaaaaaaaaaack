@@ -15,6 +15,7 @@ import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 public class StxckNeoForgeInitializer {
     public StxckNeoForgeInitializer(ModContainer container, net.neoforged.bus.api.IEventBus modBus) {
         StxckAttachments.TYPES.register(modBus);
+        me.frankv.staaaaaaaaaaaack.mixed.MixedModule.register(modBus);
         var eventBus = NeoForge.EVENT_BUS;
         eventBus.addListener(EventPriority.LOWEST, this::onEntityJoinLevel);
 

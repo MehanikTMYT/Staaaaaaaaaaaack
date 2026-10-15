@@ -1,0 +1,62 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.2.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Task :neoforge:downloadAssets
+Loaded 127 artifacts from /root/home/forks/Staaaaaaaaaaaack/neoforge/build/tmp/downloadAssets/nfrt_artifact_manifest.properties
+Downloading asset index 30
+Using Minecraft asset root: /root/.gradle/caches/neoformruntime/assets
+  ↓ https://piston-meta.mojang.com/v1/packages/2c17565f9cd7dbb95294e71fe258d65d6a8f0360/30.json
+
+> Task :neoforge:preparePersistenceServerRun
+> Task :neoforge:prepareSmokeServerRun
+> Task :neoforge:prepareVanillaBenchmarkRun
+> Task :neoforge:prepareVerifyClientRun
+> Task :neoforge:prepareVerifyServerRun
+
+> Task :neoforge:createMinecraftArtifacts
+Loaded 127 artifacts from /root/home/forks/Staaaaaaaaaaaack/neoforge/build/tmp/createMinecraftArtifacts/nfrt_artifact_manifest.properties
+[1m*** Started working on [4mdownloadManifest[0m[0m
+  ↓ https://launchermeta.mojang.com/mc/game/version_manifest_v2.json
+ [1m[92m✓[0m Completed [4mdownloadManifest[0m in 0.99s
+[1m*** Started working on [4mdownloadJson[0m[0m
+ [1m[92m✓[0m Completed [4mdownloadJson[0m in 0.01s
+[1m*** Started working on [4mdownloadServer[0m[0m
+[1m*** Started working on [4mdownloadClient[0m[0m
+ [1m[92m✓[0m Completed [4mdownloadServer[0m in 0.07s
+ [1m[92m✓[0m Completed [4mdownloadClient[0m in 0.07s
+[1m*** Started working on [4mpreProcessJar[0m[0m
+ [1m[92m♻[0m Used cache of [4mpreProcessJar[0m in 0.00s
+[1m*** Started working on [4mdecompile[0m[0m
+ [1m[92m♻[0m Used cache of [4mdecompile[0m in 0.00s
+[1m*** Started working on [4mpatch[0m[0m
+ [1m[92m♻[0m Used cache of [4mpatch[0m in 0.00s
+[1m*** Started working on [4mapplyNeoforgePatches[0m[0m
+ [1m[92m♻[0m Used cache of [4mapplyNeoforgePatches[0m in 0.00s
+[1m*** Started working on [4mtransformSources[0m[0m
+ [1m[92m♻[0m Used cache of [4mtransformSources[0m in 0.00s
+[1m*** Started working on [4mrecompile[0m[0m
+ [1m[92m♻[0m Used cache of [4mrecompile[0m in 0.00s
+[1m*** Started working on [4mmergeWithSources[0m[0m
+ [1m[92m♻[0m Used cache of [4mmergeWithSources[0m in 0.00s
+Total runtime: 4.45s
+
+
+> Task :neoforge:compileJava
+> Task :neoforge:processResources UP-TO-DATE
+> Task :neoforge:classes
+> Task :neoforge:compileVerificationJava
+> Task :neoforge:processVerificationResources UP-TO-DATE
+> Task :neoforge:verificationClasses
+> Task :neoforge:exportVerificationLaunches
+
+[Incubating] Problems report is available at: file:///root/home/forks/Staaaaaaaaaaaack/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.2.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 38s
+12 actionable tasks: 10 executed, 2 up-to-date
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.2.1/userguide/configuration_cache_enabling.html

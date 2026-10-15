@@ -159,6 +159,10 @@ public class Stxck {
     }
 
     public static boolean isBlackListItem(ItemEntity itemEntity) {
+        return (!commonConfig.isEnableForUnstackableItem() && itemEntity.getItem().getMaxStackSize() == 1) || isFiltered(itemEntity);
+    }
+
+    public static boolean isFiltered(ItemEntity itemEntity) {
         // Custom entity types may carry state/behavior a vanilla remainder cannot reproduce.
         if (itemEntity.getType() != EntityType.ITEM) return true;
         var dim = itemEntity.level().dimension().identifier();
@@ -167,9 +171,6 @@ public class Stxck {
         }
 
         var itemStack = itemEntity.getItem();
-        if (!commonConfig.isEnableForUnstackableItem() && itemStack.getMaxStackSize() == 1) {
-            return true;
-        }
 
         return itemStack.is(BLACK_LIST_TAG)
                 || (itemMatches(itemStack) ^ commonConfig.isItemListAsWhitelist());

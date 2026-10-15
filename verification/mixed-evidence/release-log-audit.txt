@@ -1,0 +1,19 @@
+release-mixedGround.log: no targeted Mixin/class/method/network/serialization error patterns; Done=True
+release-mixed.log: no targeted Mixin/class/method/network/serialization error patterns; Done=True
+release-mixedSafety.log: no targeted Mixin/class/method/network/serialization error patterns; Done=True
+release-mixedHoppers.log: no targeted Mixin/class/method/network/serialization error patterns; Done=True
+release-mixedPersistence-save.log: no targeted Mixin/class/method/network/serialization error patterns; Done=True
+release-mixedPersistence.log: no targeted Mixin/class/method/network/serialization error patterns; Done=True
+release-verify.log: no targeted Mixin/class/method/network/serialization error patterns; Done=True
+release-mixedBenchmark.log: no targeted Mixin/class/method/network/serialization error patterns; Done=True
+release-mixedLifecycle.log: no targeted Mixin/class/method/network/serialization error patterns; Done=True
+client.log: no targeted Mixin/class/method/network/serialization error patterns; Done=False
+client-server.log: no targeted Mixin/class/method/network/serialization error patterns; Done=True
+control-mixedBenchmark.log: no targeted Mixin/class/method/network/serialization error patterns; Done=True
+control-mixedVanilla.log: no targeted Mixin/class/method/network/serialization error patterns; Done=True
+fps-client.log: no targeted Mixin/class/method/network/serialization error patterns; Done=False
+fps-server.log: no targeted Mixin/class/method/network/serialization error patterns; Done=True
+mixedCreate-114.log: no targeted Mixin/class/method/network/serialization error patterns; Done=True
+gacha-114.log: no targeted Mixin/class/method/network/serialization error patterns; Done=True
+mixedGacha-114.log: no targeted Mixin/class/method/network/serialization error patterns; Done=True
+Test-world warning: empty flat generator preset logs "No key layers" during fresh world creation; server proceeds to Done. Dense burst tests produce expected overload warnings.

@@ -1,0 +1,203 @@
+2026-10-14T16:52:28.520864460Z main WARN Advanced terminal features are not available in this environment
+[19:52:28] [main/INFO] [ne.ne.fm.st.Entrypoint/]: JVM Uptime at startup: 267ms
+[19:52:28] [main/INFO] [ne.ne.fm.lo.FMLLoader/]: Starting FancyModLoader version 11.0.15 (DEDICATED_SERVER in DEV)
+[19:52:28] [main/INFO] [ne.ne.fm.lo.FMLLoader/]: Game directory: /root/home/forks/Staaaaaaaaaaaack/neoforge/run-mixed
+[19:52:29] [main/INFO] [ne.ne.fm.lo.EarlyServiceDiscovery/]: Found 2 early service jars (out of 94) in 49ms
+[19:52:29] [main/INFO] [ne.ne.fm.lo.FMLLoader/]: Loading FML Early Services:
+[19:52:29] [main/INFO] [ne.ne.fm.lo.FMLLoader/]:  - /root/.gradle/caches/modules-2/files-2.1/net.neoforged.fancymodloader/earlydisplay/11.0.15/b254aa4ec40828f8ce65411dcb7fb9f6ce008064/earlydisplay-11.0.15.jar
+[19:52:29] [main/INFO] [ne.ne.fm.lo.FMLLoader/]:  - /root/.gradle/caches/modules-2/files-2.1/net.neoforged.fancymodloader/loader/11.0.15/69ddd98736a6b095783523404d1af8992842722/loader-11.0.15.jar
+[19:52:29] [main/INFO] [ne.ne.fm.lo.ImmediateWindowHandler/]: Not loading early display in headless mode.
+[19:52:29] [main/INFO] [ne.ne.fm.lo.mo.lo.GameLocator/]: Detected a joined NeoForge and Minecraft configuration. Applying filtering...
+[19:52:29] [main/INFO] [ne.ne.fm.lo.mo.lo.InDevFolderLocator/CORE]: Got mod coordinates stxck_verification%%/root/home/forks/Staaaaaaaaaaaack/neoforge/build/classes/java/verification:stxck_verification%%/root/home/forks/Staaaaaaaaaaaack/neoforge/build/resources/verification from env
+[19:52:30] [main/INFO] [ne.ne.fm.lo.mo.lo.JarInJarDependencyLocator/]: Found 2 dependencies adding them to mods collection
+[19:52:30] [main/INFO] [ne.ne.fm.lo.mo.ModDiscoverer/]: 
+     Mod List:
+		Name Version (Mod Id)
+
+		Minecraft 26.1.2 (minecraft)
+		NeoForge 26.1.2.109 (neoforge)
+		Staaaaaaaaaaaack 26.1.2-1.8-port.2-mixed.1 (staaaaaaaaaaaack)
+		Stxck runtime verification (development only) 1.0 (stxck_verification)
+[19:52:30] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/root/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.17.3+mixin.0.8.7/41c4a3984a80f4679e759fb9f495587acc5cdac7/sponge-mixin-0.17.3+mixin.0.8.7.jar Service=FML Env=SERVER
+[19:52:30] [main/INFO] [ne.ne.fm.lo.FMLLoader/]: Loading FML Plugins:
+[19:52:30] [main/INFO] [ne.ne.fm.lo.FMLLoader/]:  - /root/.gradle/caches/modules-2/files-2.1/net.neoforged/neoforge/26.1.2.109/e379d9f1f45c052061fa6024a5959ad726771408/neoforge-26.1.2.109-universal.jar > net.neoforged.neoforge-coremods-26.1.2.109.jar
+[19:52:31] [main/INFO] [ne.ne.fm.lo.FMLLoader/]: Building game content classloader:
+ - minecraft (composite(filtered(jar(/root/home/forks/Staaaaaaaaaaaack/neoforge/build/moddev/artifacts/minecraft-patched-26.1.2.109.jar)), filtered(jar(/root/home/forks/Staaaaaaaaaaaack/neoforge/build/moddev/artifacts/minecraft-patched-26.1.2.109.jar))))
+ - mixinextras.neoforge (jar(/root/.gradle/caches/modules-2/files-2.1/net.neoforged/neoforge/26.1.2.109/e379d9f1f45c052061fa6024a5959ad726771408/neoforge-26.1.2.109-universal.jar > mixinextras-neoforge-0.5.4.jar))
+ - neoforge (composite(filtered(jar(/root/.gradle/caches/modules-2/files-2.1/net.neoforged/neoforge/26.1.2.109/e379d9f1f45c052061fa6024a5959ad726771408/neoforge-26.1.2.109-universal.jar))))
+ - net.neoforged.fml.generated (empty(VirtualJar/net.neoforged.fml.generated))
+ - staaaaaaaaaaaack (jar(mods/staaaaaaaaaaaack-neoforge-26.1.2-1.8-port.2-mixed.1.jar))
+ - stxck_verification (composite(folder(/root/home/forks/Staaaaaaaaaaaack/neoforge/build/classes/java/verification), folder(/root/home/forks/Staaaaaaaaaaaack/neoforge/build/resources/verification)))
+[19:52:31] [main/INFO] [ne.ne.fm.lo.FMLLoader/]: Built game content classloader in 114ms
+[19:52:31] [main/INFO] [mixin/]: Compatibility level set to JAVA_25
+[19:52:36] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.4).
+[19:52:50] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[19:52:50] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[19:52:50] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[19:52:50] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[19:52:50] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[19:52:50] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [time, set, time] and [time, set, timemarker] with inputs: [0, 0s, 0d, 0t]
+[19:52:50] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [time, set, timemarker] and [time, set, time] with inputs: [012]
+[19:52:50] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [time, of, clock, set, time] and [time, of, clock, set, timemarker] with inputs: [0, 0s, 0d, 0t]
+[19:52:50] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [time, of, clock, set, timemarker] and [time, of, clock, set, time] with inputs: [012]
+[19:52:50] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [waypoint, modify, waypoint, color, reset] and [waypoint, modify, waypoint, color, color] with inputs: [reset]
+[19:52:51] [modloading-worker-0/INFO] [ne.ne.ne.co.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 26.1.2.109, for MC 26.1.2
+[19:52:52] [main/INFO] [mojang/YggdrasilAuthenticationService]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[19:52:56] [main/INFO] [minecraft/RecipeManager]: Loaded 1515 recipes
+[19:52:56] [main/INFO] [minecraft/AdvancementTree]: Loaded 1617 advancements
+[19:52:56] [main/INFO] [ne.ne.ne.co.cr.RecipePriorityManager/]: Loaded 0 recipe priority overrides
+[19:52:56] [Server thread/INFO] [minecraft/DedicatedServer]: Starting minecraft server version 26.1.2
+[19:52:56] [Server thread/INFO] [minecraft/DedicatedServer]: Loading properties
+[19:52:56] [Server thread/INFO] [minecraft/DedicatedServer]: Default game type: SURVIVAL
+[19:52:56] [Server thread/INFO] [minecraft/MinecraftServer]: Generating keypair
+[19:52:57] [Server thread/INFO] [minecraft/DedicatedServer]: Starting Minecraft server on *:25584
+[19:52:57] [Server thread/WARN] [minecraft/DedicatedServer]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[19:52:57] [Server thread/WARN] [minecraft/DedicatedServer]: The server will make no attempt to authenticate usernames. Beware.
+[19:52:57] [Server thread/WARN] [minecraft/DedicatedServer]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[19:52:57] [Server thread/WARN] [minecraft/DedicatedServer]: To change this, set "online-mode" to "true" in the server.properties file.
+[19:52:57] [Server thread/INFO] [minecraft/DedicatedServer]: Preparing level "world"
+[19:52:58] [Server thread/INFO] [minecraft/LoggingLevelLoadListener]: Loading 25 persistent chunks...
+[19:52:58] [Server thread/INFO] [minecraft/LoggingLevelLoadListener]: Preparing spawn area: 28%
+[19:52:58] [Server thread/INFO] [minecraft/LoggingLevelLoadListener]: Time elapsed: 354 ms
+[19:52:58] [Server thread/INFO] [minecraft/DedicatedServer]: Done (1.012s)! For help, type "help"
+[19:52:58] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[19:52:58] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[19:52:58] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[19:52:58] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[19:52:58] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[19:52:58] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[19:52:58] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved
+[19:52:58] [Server thread/INFO] [ne.ne.ne.se.pe.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
+MIXED PASS automatic aggregation conserves 1000
+MIXED PASS automatic mixed entity exists
+MIXED PASS near-full player receives one
+MIXED PASS partial player pickup conserves remaining
+MIXED PASS simulate partial extraction
+MIXED PASS save during simulation sees committed quantity
+MIXED PASS simulation rollback
+MIXED PASS nested commit rolls back with outer simulation
+MIXED PASS execute partial extraction
+MIXED PASS execute debits once
+MIXED PASS NBT roundtrip count
+MIXED PASS NBT roundtrip original metadata
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS extract makes progress
+MIXED PASS repeated mechanism extraction conserves all
+MIXED PASS stale handler cannot extract twice
+MIXED PASS restore fixture into world
+MIXED PASS disable fixture nonempty
+MIXED PASS disable unpacks all piles
+MIXED PASS disable preserves all remaining items
+MIXED PASS benchmark conservation phase 1
+MIXED BENCH 10,5000,192.809,6.426,4.191,17.157,482.056,2,0
+MIXED PASS benchmark conservation phase 2
+MIXED BENCH 100,5000,79.585,16.231,10.971,120.841,1331.721,2,0
+[19:53:12] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping server
+[19:53:12] [Server thread/INFO] [minecraft/MinecraftServer]: Saving players
+[19:53:12] [Server thread/INFO] [minecraft/MinecraftServer]: Saving worlds
+[19:53:12] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[19:53:12] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[19:53:12] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[19:53:12] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[19:53:12] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[19:53:12] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[19:53:12] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved
+[19:53:13] [main/INFO] [ne.ne.fm.lo.FMLLoader/]: Closing FML Loader 11150b30
+[19:53:13] [main/INFO] [ne.ne.fm.ModLoader/]: Clearing ModLoader

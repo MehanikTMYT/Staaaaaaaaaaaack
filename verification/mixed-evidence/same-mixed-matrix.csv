@@ -1,0 +1,4 @@
+mode,types,count,spawn_ms,mean_mspt,p95_mspt,p99_mspt,max_mspt,cpu_ms,allocated_MiB,peak_heap_MiB,mixed_entities,item_entities,merge_tick,extract_ms
+same,1,5000,259.905,5.262,3.091,7.269,346.904,493.136,12.777,230.603,0,1,-1,0.049
+same,10,5000,57.029,9.757,4.071,4.599,724.674,945.446,20.669,213.994,0,10,-1,0.011
+same,100,5000,45.263,27.434,9.612,35.573,2233.174,2637.093,138.005,297.930,0,100,-1,0.016

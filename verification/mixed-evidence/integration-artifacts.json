@@ -1,0 +1,42 @@
+[
+  {
+    "test_directory": "run-mixed-create",
+    "file": "create-26.1.2-6.0.11.jar",
+    "sha256": "21f1d1bf018de49ce841cd1fea74251aa881624d17e2c2cbfa9fd9696cf1e25d"
+  },
+  {
+    "test_directory": "run-mixed-create",
+    "file": "staaaaaaaaaaaack-neoforge-26.1.2-1.8-port.2-mixed.1.jar",
+    "sha256": "cd510d537827cf20766be4d345cb7bf89837946485644365feccb5f7a6ad2f93"
+  },
+  {
+    "test_directory": "run-mixed-create",
+    "file": "catnip-neoforge-1.0.99999+mc26.1.2.jar",
+    "sha256": "8917e7b2808be38927cf5e38599779b296bc7d686a96b67cd21f5d459181ed91"
+  },
+  {
+    "test_directory": "run-mixed-create",
+    "file": "ponder-neoforge-1.0.99999+mc26.1.2.jar",
+    "sha256": "5b81c6923d5d0a37b306527ce15b18fbb4033ad8d4020504d146879d806564c4"
+  },
+  {
+    "test_directory": "run-mixed-gacha",
+    "file": "staaaaaaaaaaaack-neoforge-26.1.2-1.8-port.2-mixed.1.jar",
+    "sha256": "cd510d537827cf20766be4d345cb7bf89837946485644365feccb5f7a6ad2f93"
+  },
+  {
+    "test_directory": "run-mixed-gacha",
+    "file": "gachaaddiction-1.1.4+26.1.2.jar",
+    "sha256": "5737ce11e9f4e91035597a2a0641d48e51e03c8d4d80e8d0d3f283d54cff0ee5"
+  },
+  {
+    "test_directory": "run-mixed-gacha-aggregation",
+    "file": "staaaaaaaaaaaack-neoforge-26.1.2-1.8-port.2-mixed.1.jar",
+    "sha256": "cd510d537827cf20766be4d345cb7bf89837946485644365feccb5f7a6ad2f93"
+  },
+  {
+    "test_directory": "run-mixed-gacha-aggregation",
+    "file": "gachaaddiction-1.1.4+26.1.2.jar",
+    "sha256": "5737ce11e9f4e91035597a2a0641d48e51e03c8d4d80e8d0d3f283d54cff0ee5"
+  }
+]

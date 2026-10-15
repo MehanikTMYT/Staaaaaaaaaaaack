@@ -67,6 +67,7 @@ public class StxckNeoForgeCommonConfig implements StxckCommonConfig {
                 .defineList("dimensionList", ArrayList::new, () -> "",o -> o instanceof String);
 
         builder.pop();
+        me.frankv.staaaaaaaaaaaack.mixed.MixedConfig.configure(builder);
     }
     @Override
     public double getMaxMergeDistanceHorizontal() {
