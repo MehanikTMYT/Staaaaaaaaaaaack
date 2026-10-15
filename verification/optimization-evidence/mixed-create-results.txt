@@ -1,0 +1,5 @@
+PASS andesite mixed fallback to dual real FunnelBlock.entityInside, stale same entity, custom name: stored=1000 ground=0
+PASS brass mixed fallback to dual real FunnelBlock.entityInside, stale same entity, custom name: stored=1000 ground=0
+PASS real Chute fall callback and internal ItemStack, repeated stale handle: extracted=1000 ground=0; downstream extraction fixture
+PASS real BeltBlock collision and BeltInventory/ItemHandlerBeltSegment: extracted=1000 ground=0; stationary segment, downstream extraction fixture
+PASS real FanProcessing BLASTING: 64 raw iron processed, 936 raw reserve unchanged, 64 ingots; processing callback, no airflow scene

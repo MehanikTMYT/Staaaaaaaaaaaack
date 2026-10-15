@@ -18,6 +18,8 @@ maxTotalItems = 4096
 requireStablePosition = true
 excludeAutomation = true
 fallbackToVanilla = true
+maxMergeMillisPerTick = 8.0
+maxMergedEntriesPerTick = 256
 ```
 
 The delay applies only to aggregation. It never adds a pickup delay. Existing piles
@@ -72,3 +74,28 @@ holding Shift shows the first three composition entries instead of the total lab
 
 See `verification/MIXED_TEST_PLAN.md`, `verification/mixed-evidence/`, and the final
 Mixed report for measured results and the exact scope of integration tests.
+
+## Bounded aggregation work (mixed.2)
+
+Stable ordinary drops enter a server-thread FIFO queue. Each dimension spends at
+most the configured cooperative time slice on aggregation, with a separate entry
+limit. An initial two-item operation finishes atomically, so the time limit is not
+a hard deadline. Ordinary ticking, pickup and automation continue while queued;
+eligibility is checked again before transfer. No entity mutation runs in background
+threads. The queue uses weak references and does not keep chunks loaded.
+
+Loaded mixed piles use a four-block spatial index, updated on addition, removal,
+movement and content changes. Full piles are skipped unless a matching item key
+could coalesce. Internal transaction snapshots share immutable source metadata;
+external snapshots remain defensive copies. Summary synchronization happens once
+per processed batch rather than once per absorbed source.
+
+While Mixed is enabled, ordinary-item collision queries exclude exact vanilla
+ItemEntities and mixed piles, which cannot collide, while retaining custom item
+subclasses and all other candidates. A section-local, tick-scoped full-component
+key cache accelerates Same-Type candidate lookup. Every candidate is revalidated
+against its live components. An in-place component mutation can delay discovery
+until the next tick; it cannot permit merging different components. Disabling
+Mixed restores the original collision and Same-Type query paths.
+
+See `MIXED_OPTIMIZATION_REPORT.md` for profiling, latency and conservation evidence.

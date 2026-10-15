@@ -1,0 +1,75 @@
+PHASE create-and-add-5000-item-entities start=2026-10-15T16:01:48.615839945Z duration_ms=267.867633
+PHASE initial-aggregation-window start=2026-10-15T16:01:48.883873047Z duration_ms=17604.995279
+PHASE serialize-mixed-ledger start=2026-10-15T16:02:40.034875586Z duration_ms=490.018726
+PHASE transactional-extraction start=2026-10-15T16:02:40.524970762Z duration_ms=1550.022148
+SERVER_SAMPLES 2874 PACKET_BYTES 0
+
+CATEGORIES
+1131 other
+631 entity physics collision search
+526 verification/save/extract
+287 Same-Type neighbor merge
+104 Mixed search/merge (other)
+89 Mixed source NBT capture
+43 creation
+32 Mixed sync-summary preparation
+31 network tracking/encode
+
+LEAVES
+381 net.minecraft.world.level.Level.lambda$getEntities$1
+214 java.util.HashMap.getNode
+139 net.minecraft.world.level.BlockCollisions.computeNext
+132 net.minecraft.world.level.block.state.BlockBehaviour$BlockStateBase.getCollisionShape
+111 java.lang.ThreadLocal$ThreadLocalMap.getEntry
+81 net.minecraft.core.component.PatchedDataComponentMap.equals
+77 java.util.Arrays.copyOf
+74 me.frankv.staaaaaaaaaaaack.mixed.MixedPileEntity$$Lambda.0x000000005a306e18.applyAsLong
+52 net.minecraft.world.entity.EntityFluidInteraction.hasFluidAndLoaded
+47 net.neoforged.neoforge.registries.DeferredHolder.get
+42 it.unimi.dsi.fastutil.objects.Reference2ObjectOpenHashMap.hashCode
+41 net.neoforged.bus.EventBus.post
+41 it.unimi.dsi.fastutil.longs.Long2ByteOpenHashMap.get
+40 java.util.Collections$UnmodifiableCollection$1.hasNext
+38 net.minecraft.world.level.entity.EntityTickList.forEach
+37 java.util.Objects.hashCode
+31 me.frankv.staaaaaaaaaaaack.mixed.AutomationPolicy.nearAutomation
+24 net.minecraft.server.level.ServerEntity.sendChanges
+23 net.minecraft.world.entity.Entity.updateFluidInteraction
+23 net.minecraft.world.level.NaturalSpawner.createState
+23 net.minecraft.world.entity.Entity.setPos
+22 net.minecraft.world.phys.shapes.Shapes.create
+20 java.util.concurrent.CompletableFuture.reportJoin
+20 net.minecraft.nbt.CompoundTag.lambda$copy$0
+17 net.minecraft.world.entity.item.ItemEntity.tick
+
+ENTITY_QUERY_CALLERS
+8 net.minecraft.world.level.entity.EntitySection.getEntities <- net.minecraft.world.level.entity.EntitySectionStorage.lambda$getEntities$1 <- net.minecraft.world.level.entity.EntitySectionStorage$$Lambda.0x000000005a2bcc00.accept <- net.minecraft.world.level.entity.EntitySectionStorage.forEachAccessibleNonEmptySection <- net.minecraft.world.level.entity.EntitySectionStorage.getEntities <- net.minecraft.world.level.entity.LevelEntityGetterAdapter.get <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.EntityGetter.getEntitiesOfClass <- net.minecraft.world.entity.item.ItemEntity.mixinextras$bridge$getEntitiesOfClass$90 <- net.minecraft.world.entity.item.ItemEntity$$Lambda.0x000000005a301bf0.call <- net.minecraft.world.entity.item.ItemEntity.wrapOperation$zzb000$staaaaaaaaaaaack$mixed$matchingCandidates <- net.minecraft.world.entity.item.ItemEntity.mergeWithNeighbours <- net.minecraft.world.entity.item.ItemEntity.stxck$mergeNeighbours <- net.minecraft.world.entity.item.ItemEntity.handler$zza000$staaaaaaaaaaaack$stxck$deferredReady <- net.minecraft.world.entity.item.ItemEntity.tick <- net.minecraft.server.level.ServerLevel.tickNonPassenger
+1 net.minecraft.world.level.entity.EntitySection.getEntities <- net.minecraft.world.level.entity.EntitySectionStorage.lambda$getEntities$1 <- net.minecraft.world.level.entity.EntitySectionStorage$$Lambda.0x000000005a2bcc00.accept <- net.minecraft.world.level.entity.EntitySectionStorage.forEachAccessibleNonEmptySection <- net.minecraft.world.level.entity.EntitySectionStorage.getEntities <- net.minecraft.world.level.entity.LevelEntityGetterAdapter.get <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.EntityGetter.getEntitiesOfClass <- net.minecraft.world.level.EntityGetter.getEntitiesOfClass <- me.frankv.staaaaaaaaaaaack.mixed.AutomationPolicy.nearAutomation <- me.frankv.staaaaaaaaaaaack.mixed.AutomationPolicy.mustUnpack <- me.frankv.staaaaaaaaaaaack.mixed.MixedPileEntity.tick <- net.minecraft.server.level.ServerLevel.tickNonPassenger <- net.minecraft.server.level.ServerLevel$$Lambda.0x000000005a2b9dd8.accept <- net.minecraft.world.level.Level.guardEntityTick <- net.minecraft.server.level.ServerLevel.lambda$tick$0
+1 net.minecraft.world.level.entity.EntitySection.getEntities <- net.minecraft.world.level.entity.EntitySectionStorage.lambda$getEntities$1 <- net.minecraft.world.level.entity.EntitySectionStorage$$Lambda.0x000000005a2bcc00.accept <- net.minecraft.world.level.entity.EntitySectionStorage.forEachAccessibleNonEmptySection <- net.minecraft.world.level.entity.EntitySectionStorage.getEntities <- net.minecraft.world.level.entity.LevelEntityGetterAdapter.get <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.EntityGetter.getEntitiesOfClass <- net.minecraft.world.level.EntityGetter.getEntitiesOfClass <- me.frankv.staaaaaaaaaaaack.verify.MixedProfile.items <- me.frankv.staaaaaaaaaaaack.verify.MixedProfile.total <- me.frankv.staaaaaaaaaaaack.verify.MixedProfile.post <- me.frankv.staaaaaaaaaaaack.verify.MixedProfile$$Lambda.0x0000000059e93228.accept <- net.neoforged.bus.ConsumerEventHandler.invoke <- net.neoforged.bus.EventBus.post <- net.neoforged.bus.EventBus.post
+
+LEVEL_QUERY_CALLERS
+116 net.minecraft.world.level.Level.lambda$getEntities$1 <- net.minecraft.world.level.Level$$Lambda.0x000000005a2bdd50.accept <- net.minecraft.world.level.entity.EntitySection.getEntities <- net.minecraft.world.level.entity.EntitySectionStorage.lambda$getEntities$1 <- net.minecraft.world.level.entity.EntitySectionStorage$$Lambda.0x000000005a2bcc00.accept <- net.minecraft.world.level.entity.EntitySectionStorage.forEachAccessibleNonEmptySection <- net.minecraft.world.level.entity.EntitySectionStorage.getEntities <- net.minecraft.world.level.entity.LevelEntityGetterAdapter.get <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.EntityGetter.getEntitiesOfClass <- net.minecraft.world.entity.item.ItemEntity.mixinextras$bridge$getEntitiesOfClass$90 <- net.minecraft.world.entity.item.ItemEntity$$Lambda.0x000000005a301bf0.call <- net.minecraft.world.entity.item.ItemEntity.wrapOperation$zzb000$staaaaaaaaaaaack$mixed$matchingCandidates <- net.minecraft.world.entity.item.ItemEntity.mergeWithNeighbours <- net.minecraft.world.entity.item.ItemEntity.tick <- net.minecraft.server.level.ServerLevel.tickNonPassenger <- net.minecraft.server.level.ServerLevel$$Lambda.0x000000005a2b9dd8.accept <- net.minecraft.world.level.Level.guardEntityTick
+113 net.minecraft.world.level.Level.lambda$getEntities$1 <- net.minecraft.world.level.Level$$Lambda.0x000000005a2bdd50.accept <- net.minecraft.world.level.entity.EntitySection.handler$zzc000$staaaaaaaaaaaack$stxck$query <- net.minecraft.world.level.entity.EntitySection.getEntities <- net.minecraft.world.level.entity.EntitySectionStorage.lambda$getEntities$1 <- net.minecraft.world.level.entity.EntitySectionStorage$$Lambda.0x000000005a2bcc00.accept <- net.minecraft.world.level.entity.EntitySectionStorage.forEachAccessibleNonEmptySection <- net.minecraft.world.level.entity.EntitySectionStorage.getEntities <- net.minecraft.world.level.entity.LevelEntityGetterAdapter.get <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.EntityGetter.wrapOperation$zzd000$staaaaaaaaaaaack$stxck$collisionCandidates <- net.minecraft.world.level.EntityGetter.getEntityCollisions <- net.minecraft.world.level.CommonLevelAccessor.getEntityCollisions <- net.minecraft.world.level.CollisionGetter.noEntityCollision <- net.minecraft.world.level.CollisionGetter.noCollision <- net.minecraft.world.level.CollisionGetter.noCollision <- net.minecraft.world.entity.item.ItemEntity.tick <- net.minecraft.server.level.ServerLevel.tickNonPassenger
+74 net.minecraft.world.level.Level.lambda$getEntities$1 <- net.minecraft.world.level.Level$$Lambda.0x000000005a2bdd50.accept <- net.minecraft.world.level.entity.EntitySection.handler$zzc000$staaaaaaaaaaaack$stxck$query <- net.minecraft.world.level.entity.EntitySection.getEntities <- net.minecraft.world.level.entity.EntitySectionStorage.lambda$getEntities$1 <- net.minecraft.world.level.entity.EntitySectionStorage$$Lambda.0x000000005a2bcc00.accept <- net.minecraft.world.level.entity.EntitySectionStorage.forEachAccessibleNonEmptySection <- net.minecraft.world.level.entity.EntitySectionStorage.getEntities <- net.minecraft.world.level.entity.LevelEntityGetterAdapter.get <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.EntityGetter.wrapOperation$zzd000$staaaaaaaaaaaack$stxck$collisionCandidates <- net.minecraft.world.level.EntityGetter.getEntityCollisions <- net.minecraft.world.level.CommonLevelAccessor.getEntityCollisions <- net.minecraft.world.entity.Entity.collide <- net.minecraft.world.entity.Entity.move <- net.minecraft.world.entity.item.ItemEntity.tick <- net.minecraft.server.level.ServerLevel.tickNonPassenger <- net.minecraft.server.level.ServerLevel$$Lambda.0x000000005a2b9dd8.accept
+46 net.minecraft.world.level.Level.lambda$getEntities$1 <- net.minecraft.world.level.Level$$Lambda.0x000000005a2bdd50.accept <- net.minecraft.world.level.entity.EntitySection.getEntities <- net.minecraft.world.level.entity.EntitySectionStorage.lambda$getEntities$1 <- net.minecraft.world.level.entity.EntitySectionStorage$$Lambda.0x000000005a2bcc00.accept <- net.minecraft.world.level.entity.EntitySectionStorage.forEachAccessibleNonEmptySection <- net.minecraft.world.level.entity.EntitySectionStorage.getEntities <- net.minecraft.world.level.entity.LevelEntityGetterAdapter.get <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.EntityGetter.getEntitiesOfClass <- net.minecraft.world.level.EntityGetter.getEntitiesOfClass <- me.frankv.staaaaaaaaaaaack.verify.MixedProfile.items <- me.frankv.staaaaaaaaaaaack.verify.MixedProfile.post <- me.frankv.staaaaaaaaaaaack.verify.MixedProfile$$Lambda.0x0000000059e93228.accept <- net.neoforged.bus.ConsumerEventHandler.invoke <- net.neoforged.bus.EventBus.post <- net.neoforged.bus.EventBus.post <- net.neoforged.neoforge.event.EventHooks.fireServerTickPost
+27 net.minecraft.world.level.Level.lambda$getEntities$1 <- net.minecraft.world.level.Level$$Lambda.0x000000005a2bdd50.accept <- net.minecraft.world.level.entity.EntitySection.getEntities <- net.minecraft.world.level.entity.EntitySectionStorage.lambda$getEntities$1 <- net.minecraft.world.level.entity.EntitySectionStorage$$Lambda.0x000000005a2bcc00.accept <- net.minecraft.world.level.entity.EntitySectionStorage.forEachAccessibleNonEmptySection <- net.minecraft.world.level.entity.EntitySectionStorage.getEntities <- net.minecraft.world.level.entity.LevelEntityGetterAdapter.get <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.EntityGetter.getEntitiesOfClass <- net.minecraft.world.level.EntityGetter.getEntitiesOfClass <- me.frankv.staaaaaaaaaaaack.verify.MixedProfile.items <- me.frankv.staaaaaaaaaaaack.verify.MixedProfile.total <- me.frankv.staaaaaaaaaaaack.verify.MixedProfile.post <- me.frankv.staaaaaaaaaaaack.verify.MixedProfile$$Lambda.0x0000000059e93228.accept <- net.neoforged.bus.ConsumerEventHandler.invoke <- net.neoforged.bus.EventBus.post <- net.neoforged.bus.EventBus.post
+4 net.minecraft.world.level.Level.lambda$getEntities$1 <- net.minecraft.world.level.Level$$Lambda.0x000000005a2bdd50.accept <- net.minecraft.world.level.entity.EntitySection.getEntities <- net.minecraft.world.level.entity.EntitySectionStorage.lambda$getEntities$1 <- net.minecraft.world.level.entity.EntitySectionStorage$$Lambda.0x000000005a2bcc00.accept <- net.minecraft.world.level.entity.EntitySectionStorage.forEachAccessibleNonEmptySection <- net.minecraft.world.level.entity.EntitySectionStorage.getEntities <- net.minecraft.world.level.entity.LevelEntityGetterAdapter.get <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.EntityGetter.getEntitiesOfClass <- net.minecraft.world.level.EntityGetter.getEntitiesOfClass <- me.frankv.staaaaaaaaaaaack.verify.MixedProfile.piles <- me.frankv.staaaaaaaaaaaack.verify.MixedProfile.post <- me.frankv.staaaaaaaaaaaack.verify.MixedProfile$$Lambda.0x0000000059e93228.accept <- net.neoforged.bus.ConsumerEventHandler.invoke <- net.neoforged.bus.EventBus.post <- net.neoforged.bus.EventBus.post <- net.neoforged.neoforge.event.EventHooks.fireServerTickPost
+
+ALLOCATION_SAMPLED_BYTES_ALL_THREADS
+371747416 net.minecraft.world.phys.AABB
+320623472 [Ljava.lang.Object;
+233099408 net.minecraft.world.phys.Vec3
+152450360 [B
+141192920 java.util.HashMap$Node
+129817016 it.unimi.dsi.fastutil.doubles.DoubleArrayList
+110998016 net.minecraft.core.BlockPos$MutableBlockPos
+75251472 [Ljava.util.HashMap$Node;
+73576920 java.util.ArrayList
+72558008 net.minecraft.world.phys.shapes.EntityCollisionContext
+61795760 java.util.HashMap
+61649936 java.util.LinkedHashMap$LinkedKeyIterator
+60348080 net.minecraft.world.level.Level$$Lambda.0x000000005a2bdd50
+57331888 java.util.ImmutableCollections$ListItr
+53335152 net.neoforged.neoforge.event.tick.EntityTickEvent$Post
+
+PACKET_COUNTS

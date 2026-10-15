@@ -1,0 +1,1 @@
+PASS connected=false items=5000 ticks=1000 spawn_ms=332.700 aggregation_ticks=10 aggregation_wall_ms=34275.657 mean_mspt=37.380 p99_ms=42.563 p999_ms=3529.572 max_ms=7915.603 first100_mean=344.073 first100_p99=3529.572 final_piles=79 serialize_ms=582.754 serialized_chars=2192121 extract_ms=630.626 cpu_ms=36652.759 allocated_MiB=553.837

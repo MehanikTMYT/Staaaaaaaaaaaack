@@ -1,0 +1,69 @@
+PHASE create-and-add-5000-item-entities start=2026-10-15T16:13:44.035547129Z duration_ms=362.307135
+PHASE initial-aggregation-window start=2026-10-15T16:13:44.398158814Z duration_ms=10637.68967
+PHASE serialize-mixed-ledger start=2026-10-15T16:14:35.379095995Z duration_ms=507.478051
+PHASE transactional-extraction start=2026-10-15T16:14:35.886652846Z duration_ms=1292.502174
+SERVER_SAMPLES 2035 PACKET_BYTES 0
+
+CATEGORIES
+998 other
+414 verification/save/extract
+285 entity physics collision search
+144 Mixed search/merge (other)
+78 Mixed source NBT capture
+57 creation
+25 Mixed sync-summary preparation
+19 Same-Type neighbor merge
+15 network tracking/encode
+
+LEAVES
+261 java.util.HashMap.getNode
+89 net.minecraft.world.level.BlockCollisions.computeNext
+81 net.minecraft.world.level.block.state.BlockBehaviour$BlockStateBase.getCollisionShape
+52 me.frankv.staaaaaaaaaaaack.mixed.MixedPileEntity$$Lambda.0x0000000014302218.applyAsLong
+50 java.util.Objects.hashCode
+43 java.util.Arrays.copyOf
+40 it.unimi.dsi.fastutil.objects.Reference2ObjectOpenHashMap.hashCode
+33 java.lang.ThreadLocal$ThreadLocalMap.getEntry
+33 me.frankv.staaaaaaaaaaaack.mixed.AutomationPolicy.nearAutomation
+32 java.util.concurrent.CompletableFuture.reportJoin
+32 net.minecraft.world.level.entity.EntityTypeTest$1.tryCast
+28 it.unimi.dsi.fastutil.objects.Reference2ObjectMap.entrySet
+27 java.util.IdentityHashMap.containsKey
+26 net.minecraft.world.level.entity.EntityTickList.forEach
+24 it.unimi.dsi.fastutil.longs.Long2ByteOpenHashMap.get
+20 net.neoforged.bus.EventBus.post
+18 com.google.common.math.IntMath.pow
+17 java.util.stream.ReferencePipeline$5$1.accept
+17 java.util.stream.MatchOps$1MatchSink.accept
+16 net.minecraft.world.entity.EntityFluidInteraction.update
+15 net.minecraft.world.level.Level.getChunk
+15 net.minecraft.world.level.EntityGetter.getEntityCollisions
+14 it.unimi.dsi.fastutil.longs.LongAVLTreeSet.locateKey
+14 java.util.Arrays.fill
+14 net.minecraft.core.SectionPos.of
+
+ENTITY_QUERY_CALLERS
+2 net.minecraft.world.level.entity.EntitySection.getEntities <- net.minecraft.world.level.entity.EntitySectionStorage.lambda$getEntities$1 <- net.minecraft.world.level.entity.EntitySectionStorage$$Lambda.0x00000000142baed0.accept <- net.minecraft.world.level.entity.EntitySectionStorage.forEachAccessibleNonEmptySection <- net.minecraft.world.level.entity.EntitySectionStorage.getEntities <- net.minecraft.world.level.entity.LevelEntityGetterAdapter.get <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.EntityGetter.wrapOperation$zzd000$staaaaaaaaaaaack$stxck$collisionCandidates <- net.minecraft.world.level.EntityGetter.getEntityCollisions <- net.minecraft.world.level.CommonLevelAccessor.getEntityCollisions <- net.minecraft.world.entity.Entity.collide <- net.minecraft.world.entity.Entity.move <- net.minecraft.world.entity.item.ItemEntity.tick <- net.minecraft.server.level.ServerLevel.tickNonPassenger <- net.minecraft.server.level.ServerLevel$$Lambda.0x00000000142b1c00.accept <- net.minecraft.world.level.Level.guardEntityTick
+2 net.minecraft.world.level.entity.EntitySection.getEntities <- net.minecraft.world.level.entity.EntitySectionStorage.lambda$getEntities$1 <- net.minecraft.world.level.entity.EntitySectionStorage$$Lambda.0x00000000142baed0.accept <- net.minecraft.world.level.entity.EntitySectionStorage.forEachAccessibleNonEmptySection <- net.minecraft.world.level.entity.EntitySectionStorage.getEntities <- net.minecraft.world.level.entity.LevelEntityGetterAdapter.get <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.EntityGetter.wrapOperation$zzd000$staaaaaaaaaaaack$stxck$collisionCandidates <- net.minecraft.world.level.EntityGetter.getEntityCollisions <- net.minecraft.world.level.CommonLevelAccessor.getEntityCollisions <- net.minecraft.world.level.CollisionGetter.noEntityCollision <- net.minecraft.world.level.CollisionGetter.noCollision <- net.minecraft.world.level.CollisionGetter.noCollision <- net.minecraft.world.entity.item.ItemEntity.tick <- net.minecraft.server.level.ServerLevel.tickNonPassenger <- net.minecraft.server.level.ServerLevel$$Lambda.0x00000000142b1c00.accept
+1 net.minecraft.world.level.entity.EntitySection.getEntities <- net.minecraft.world.level.entity.EntitySectionStorage.lambda$getEntities$1 <- net.minecraft.world.level.entity.EntitySectionStorage$$Lambda.0x00000000142baed0.accept <- net.minecraft.world.level.entity.EntitySectionStorage.forEachAccessibleNonEmptySection <- net.minecraft.world.level.entity.EntitySectionStorage.getEntities <- net.minecraft.world.level.entity.LevelEntityGetterAdapter.get <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.Level.getEntities <- net.minecraft.world.level.EntityGetter.getEntitiesOfClass <- net.minecraft.world.level.EntityGetter.getEntitiesOfClass <- me.frankv.staaaaaaaaaaaack.verify.MixedProfile.items <- me.frankv.staaaaaaaaaaaack.verify.MixedProfile.post <- me.frankv.staaaaaaaaaaaack.verify.MixedProfile$$Lambda.0x0000000013e8a2b0.accept <- net.neoforged.bus.ConsumerEventHandler.invoke <- net.neoforged.bus.EventBus.post <- net.neoforged.bus.EventBus.post <- net.neoforged.neoforge.event.EventHooks.fireServerTickPost
+
+LEVEL_QUERY_CALLERS
+
+ALLOCATION_SAMPLED_BYTES_ALL_THREADS
+254019904 [Ljava.lang.Object;
+203178384 net.minecraft.world.phys.AABB
+121996240 [I
+96342424 net.minecraft.world.level.EntityGetter$$Lambda.0x00000000142ba5e8
+78160240 java.util.HashMap$Node
+76437944 net.minecraft.world.phys.Vec3
+76082848 java.util.IdentityHashMap$KeyIterator
+60383320 net.minecraft.world.level.BlockCollisions
+58240216 it.unimi.dsi.fastutil.objects.Reference2ObjectArrayMap$EntrySet$2
+58098640 [D
+57598464 net.minecraft.world.entity.Entity$$Lambda.0x00000000142b88a0
+57522424 java.util.LinkedHashMap$LinkedKeyIterator
+47691192 java.util.ImmutableCollections$ListItr
+47674128 net.minecraft.core.Cursor3D
+34035960 net.minecraft.world.entity.Entity$Movement
+
+PACKET_COUNTS

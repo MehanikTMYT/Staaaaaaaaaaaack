@@ -6,7 +6,9 @@
   "mixins": [
     "ItemEntityAccessor",
     "ItemEntityMixin",
-    "MixedItemEntityMixin"
+    "MixedItemEntityMixin",
+    "MixedEntitySectionMixin",
+    "MixedEntityCollisionMixin"
   ],
   "client": [
     "client.ItemEntityRendererMixin",

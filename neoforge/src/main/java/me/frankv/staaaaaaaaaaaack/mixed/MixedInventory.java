@@ -12,7 +12,7 @@ public final class MixedInventory extends SnapshotJournal<List<MixedEntry>> impl
  MixedInventory(MixedPileEntity pile){this.pile=pile;}
  private MixedEntry entry(int index){return pile.isRemoved()||index<0||index>=pile.entries.size()?null:pile.entries.get(index);}
  public int size(){return pile.entries.size();}
- public ItemResource getResource(int index){var e=entry(index);return e==null||e.count==0?ItemResource.EMPTY:ItemResource.of(e.item);}
+ public ItemResource getResource(int index){var e=entry(index);return e==null||e.count==0?ItemResource.EMPTY:e.resource;}
  public long getAmountAsLong(int index){var e=entry(index);return e==null||e.item.isEmpty()?0:e.count;}
  public long getCapacityAsLong(int index,ItemResource resource){return isValid(index,resource)?MixedConfig.maxTotalItems.get():0;}
  public boolean isValid(int index,ItemResource resource){var e=entry(index);return e!=null&&!e.item.isEmpty()&&(resource.isEmpty()||resource.matches(e.item));}

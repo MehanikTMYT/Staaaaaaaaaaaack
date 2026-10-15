@@ -1,0 +1,46 @@
+[
+  {
+    "scenario": "baseline-headless",
+    "samples": 1000,
+    "mean": 37.38003005,
+    "p95": 5.037914,
+    "p99": 42.562528,
+    "p999": 3529.571559,
+    "maximum": 7915.602913,
+    "minimum_quantity": 5000,
+    "maximum_quantity": 5000
+  },
+  {
+    "scenario": "baseline-connected",
+    "samples": 1000,
+    "mean": 73.61440323900001,
+    "p95": 28.493095,
+    "p99": 130.925633,
+    "p999": 6927.882055,
+    "maximum": 15837.423681,
+    "minimum_quantity": 5000,
+    "maximum_quantity": 5000
+  },
+  {
+    "scenario": "optimized-headless",
+    "samples": 1000,
+    "mean": 10.370063479,
+    "p95": 41.240166,
+    "p99": 92.115941,
+    "p999": 186.593032,
+    "maximum": 711.410398,
+    "minimum_quantity": 5000,
+    "maximum_quantity": 5000
+  },
+  {
+    "scenario": "optimized-connected",
+    "samples": 1000,
+    "mean": 21.990678523,
+    "p95": 74.254185,
+    "p99": 155.427086,
+    "p999": 619.076908,
+    "maximum": 1174.882301,
+    "minimum_quantity": 5000,
+    "maximum_quantity": 5000
+  }
+]

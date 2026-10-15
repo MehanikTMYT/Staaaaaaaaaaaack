@@ -1,0 +1,1 @@
+PASS real GachaCommand full-inventory reward + two item types automatically aggregate after 40 world ticks: 1064 total, 64 owner-restricted, custom components preserved, fake display excluded; unpack exact. FakePlayer/no UI.

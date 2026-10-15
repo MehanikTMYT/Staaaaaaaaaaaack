@@ -20,6 +20,7 @@ public final class MixedPileEntity extends Entity {
  private static final EntityDataAccessor<ItemStack> SAMPLE=SynchedEntityData.defineId(MixedPileEntity.class,EntityDataSerializers.ITEM_STACK);
  private static final EntityDataAccessor<String> SUMMARY=SynchedEntityData.defineId(MixedPileEntity.class,EntityDataSerializers.STRING);
  final List<MixedEntry> entries=new ArrayList<>();
+ private final Set<net.neoforged.neoforge.transfer.item.ItemResource> itemKinds=new HashSet<>();
  public final MixedInventory inventory=new MixedInventory(this);
  boolean busy;
  public MixedPileEntity(EntityType<? extends MixedPileEntity> type,Level level){super(type,level);}
@@ -28,7 +29,10 @@ public final class MixedPileEntity extends Entity {
  public int entryCount(){return level().isClientSide()?entityData.get(TYPES):(int)entries.stream().filter(e->e.count>0).count();}
  public ItemStack sample(){return entityData.get(SAMPLE);}
  public String summary(){return entityData.get(SUMMARY);}
- public List<MixedEntry> snapshot(){return entries.stream().map(MixedEntry::copy).toList();}
+ Set<net.neoforged.neoforge.transfer.item.ItemResource> indexKinds(){return itemKinds;}
+ @Override public void onAddedToLevel(){super.onAddedToLevel();MixedPileIndex.update(this);}
+ @Override public void onRemovedFromLevel(){MixedPileIndex.remove(this);super.onRemovedFromLevel();}
+ public List<MixedEntry> snapshot(){return entries.stream().map(MixedEntry::snapshotCopy).toList();}
  boolean canAccept(MixedEntry entry){
   if(isRemoved()||inventory.isInTransaction()||entry.count<=0||entry.item.isEmpty()||total()+entry.count>MixedConfig.maxTotalItems.get())return false;
   return entries.stream().anyMatch(e->e.count>0&&e.compatible(entry))||entryCount()<MixedConfig.maxEntries.get();
@@ -36,19 +40,23 @@ public final class MixedPileEntity extends Entity {
  boolean append(MixedEntry entry){
   if(!canAccept(entry))return false;
   for(var old:entries)if(old.count>0&&old.compatible(entry)){old.count=Math.addExact(old.count,entry.count);return true;}
-  entries.add(entry);return true;
+  entries.add(entry);itemKinds.add(entry.resource);return true;
  }
- public boolean absorb(ItemEntity source){
+ public boolean absorb(ItemEntity source){return absorb(source,true);}
+ boolean absorb(ItemEntity source,boolean synchronize){return absorb(source,synchronize,null);}
+ boolean absorb(ItemEntity source,boolean synchronize,net.neoforged.neoforge.transfer.item.ItemResource identity){
   if(busy||inventory.isInTransaction()||!MixedAggregation.eligible(source))return false;
   if(total()+Stxck.getTotalCount(source)>MixedConfig.maxTotalItems.get())return false;
-  if(entryCount()>=MixedConfig.maxEntries.get()&&entries.stream().noneMatch(e->ItemStack.isSameItemSameComponents(e.item,source.getItem())))return false;
+  if(entryCount()>=MixedConfig.maxEntries.get()&&!itemKinds.contains(identity==null?net.neoforged.neoforge.transfer.item.ItemResource.of(source.getItem()):identity))return false;
   var entry=MixedEntry.capture(source);if(!append(entry))return false;
-  MixedAggregation.consume(source);changed();return true;
+  MixedAggregation.consume(source);if(synchronize)changed();return true;
  }
  void changed(){
   if(inventory.isInTransaction())return;
   entries.removeIf(e->e.count==0);
+  itemKinds.clear();for(var entry:entries)if(!entry.item.isEmpty())itemKinds.add(entry.resource);
   if(entries.isEmpty()){discard();return;}
+  MixedPileIndex.update(this);
   long total=total();entityData.set(TOTAL,(int)Math.min(Integer.MAX_VALUE,total));entityData.set(TYPES,entries.size());
   var first=entries.stream().filter(e->!e.item.isEmpty()).findFirst();entityData.set(SAMPLE,first.map(e->e.item.copyWithCount(1)).orElse(new ItemStack(Items.BARRIER)));
   var text=new StringBuilder();int shown=0;
@@ -88,6 +96,7 @@ public final class MixedPileEntity extends Entity {
  }
  @Override public void tick(){
   super.tick();if(level().isClientSide()||isRemoved()||busy||inventory.isInTransaction())return;
+  MixedPileIndex.moved(this);
   if(!MixedConfig.enabled.get()||(MixedConfig.fallbackToVanilla.get()&&AutomationPolicy.mustUnpack(this))){unpack();return;}
   boolean changed=false;busy=true;
   try{for(var e:List.copyOf(entries)){

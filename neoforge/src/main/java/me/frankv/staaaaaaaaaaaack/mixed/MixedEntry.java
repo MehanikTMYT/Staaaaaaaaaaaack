@@ -11,11 +11,12 @@ import net.minecraft.world.level.storage.*;
 /** One independently aging item identity. Full original entity metadata survives materialization. */
 public final class MixedEntry {
  public final ItemStack item;
+ public final net.neoforged.neoforge.transfer.item.ItemResource resource;
  public final CompoundTag source, identity;
  public int count, age, delay;
  public final int lifespan;
  private MixedEntry(ItemStack item,CompoundTag source,int count,int age,int delay,int lifespan){
-  this.item=item.copyWithCount(1);this.source=source;this.count=count;this.age=age;this.delay=delay;this.lifespan=lifespan;
+  this.item=item.copyWithCount(1);this.resource=net.neoforged.neoforge.transfer.item.ItemResource.of(this.item);this.source=source;this.count=count;this.age=age;this.delay=delay;this.lifespan=lifespan;
   identity=source.copy();
   for(String key:new String[]{"UUID","Pos","Motion","Rotation","Item","Age","PickupDelay","StxckExtraItemCount","StxckExtraItemTemplate","StxckMixedCooldown","OnGround","FallDistance"})identity.remove(key);
  }
@@ -24,7 +25,11 @@ public final class MixedEntry {
   var accessor=(ItemEntityAccessor)entity;
   return new MixedEntry(entity.getItem(),output.buildResult(),Math.toIntExact(Stxck.getTotalCount(entity)),accessor.getAge(),accessor.getPickupDelay(),entity.lifespan);
  }
- public MixedEntry copy(){return new MixedEntry(item,source,count,age,delay,lifespan);}
+ private MixedEntry(MixedEntry original){item=original.item.copyWithCount(1);resource=original.resource;source=original.source;identity=original.identity;count=original.count;age=original.age;delay=original.delay;lifespan=original.lifespan;}
+ /** Internal transaction snapshots share immutable metadata; only count/timers are journaled. */
+ public MixedEntry copy(){return new MixedEntry(this);}
+ /** External snapshots must not expose the authoritative compound tags. */
+ public MixedEntry snapshotCopy(){return new MixedEntry(item,source.copy(),count,age,delay,lifespan);}
  public boolean compatible(MixedEntry other){return age==other.age&&delay==other.delay&&lifespan==other.lifespan&&identity.equals(other.identity)&&ItemStack.isSameItemSameComponents(item,other.item);}
  public CompoundTag save(){
   var tag=new CompoundTag();tag.put("Source",source.copy());tag.putInt("Count",count);tag.putInt("Age",age);tag.putInt("Delay",delay);tag.putInt("Lifespan",lifespan);return tag;

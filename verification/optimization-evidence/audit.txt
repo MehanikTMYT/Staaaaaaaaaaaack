@@ -1,0 +1,2 @@
+PASS 27 logs: no targeted mixin/linkage/packet/serialization/assertion failures. Artifact contains license, no verification classes or Fabric loader metadata.
+SHA256 9d44c37b1e27180baf93a22bb2a7cc4c45918076bb1fdaf31393f7d901bb387e
