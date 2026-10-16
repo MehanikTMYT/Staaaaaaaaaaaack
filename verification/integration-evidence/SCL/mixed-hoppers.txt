@@ -1,0 +1,1 @@
+PASS two real ticking hoppers, direct transactional capability and vanilla fallback, 1000 items each

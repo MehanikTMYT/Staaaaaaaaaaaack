@@ -13,6 +13,8 @@ for old in (directory/'mods').glob('staaaaaaaaaaaack-*.jar'):
  if old.name!=jar.name:old.unlink()
 if mode!='mixedVanilla':shutil.copy2(jar,directory/'mods'/jar.name)
 elif (directory/'mods'/jar.name).exists():(directory/'mods'/jar.name).unlink()
+# Integration runs (Optimization Compendium, Lithium, ...): extra mod jars, space-separated paths.
+for extra in os.environ.get('STXCK_EXTRA_MODS','').split():shutil.copy2(extra,directory/'mods'/pathlib.Path(extra).name)
 (directory/'eula.txt').write_text('eula=true\n')
 if not (directory/'server.properties').exists():(directory/'server.properties').write_text('pause-when-empty-seconds=0\nserver-ip=127.0.0.1\nonline-mode=false\nserver-port=25584\nlevel-type=minecraft:flat\ngenerate-structures=false\nspawn-protection=0\nview-distance=2\nsimulation-distance=2\n')
 if mode in ('mixedBenchmark','mixedVanilla','mixedProfile'):

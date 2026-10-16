@@ -1,0 +1,135 @@
+2026-10-15T22:19:41.857994184Z main WARN Advanced terminal features are not available in this environment
+[01:19:42] [main/INFO] [ne.ne.fm.st.Entrypoint/]: JVM Uptime at startup: 295ms
+[01:19:42] [main/INFO] [ne.ne.fm.lo.FMLLoader/]: Starting FancyModLoader version 11.0.15 (DEDICATED_SERVER in DEV)
+[01:19:42] [main/INFO] [ne.ne.fm.lo.FMLLoader/]: Game directory: /root/home/forks/worktrees/stxck-integration/neoforge/run-mixed-optimization-1792102780-SCL-same
+[01:19:42] [main/INFO] [ne.ne.fm.lo.EarlyServiceDiscovery/]: Found 2 early service jars (out of 96) in 62ms
+[01:19:42] [main/INFO] [ne.ne.fm.lo.FMLLoader/]: Loading FML Early Services:
+[01:19:42] [main/INFO] [ne.ne.fm.lo.FMLLoader/]:  - /root/.gradle/caches/modules-2/files-2.1/net.neoforged.fancymodloader/earlydisplay/11.0.15/b254aa4ec40828f8ce65411dcb7fb9f6ce008064/earlydisplay-11.0.15.jar
+[01:19:42] [main/INFO] [ne.ne.fm.lo.FMLLoader/]:  - /root/.gradle/caches/modules-2/files-2.1/net.neoforged.fancymodloader/loader/11.0.15/69ddd98736a6b095783523404d1af8992842722/loader-11.0.15.jar
+[01:19:42] [main/INFO] [ne.ne.fm.lo.ImmediateWindowHandler/]: Not loading early display in headless mode.
+[01:19:42] [main/INFO] [ne.ne.fm.lo.mo.lo.GameLocator/]: Detected a joined NeoForge and Minecraft configuration. Applying filtering...
+[01:19:42] [main/INFO] [ne.ne.fm.lo.mo.lo.InDevFolderLocator/CORE]: Got mod coordinates stxck_verification%%/root/home/forks/worktrees/stxck-integration/neoforge/build/classes/java/verification:stxck_verification%%/root/home/forks/worktrees/stxck-integration/neoforge/build/resources/verification from env
+[01:19:43] [main/INFO] [ne.ne.fm.lo.mo.lo.JarInJarDependencyLocator/]: Found 5 dependencies adding them to mods collection
+[01:19:43] [main/INFO] [ne.ne.fm.lo.mo.ModDiscoverer/]: 
+     Mod List:
+		Name Version (Mod Id)
+
+		Fast Suite 7.0.0 (fastsuite)
+		Lithium 0.24.7 (lithium)
+		Minecraft 26.1.2 (minecraft)
+		NeoForge 26.1.2.114 (neoforge)
+		Staaaaaaaaaaaack 26.1.2-1.8-port.2-mixed.2 (staaaaaaaaaaaack)
+		Stxck runtime verification (development only) 1.0 (stxck_verification)
+[01:19:44] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/root/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.17.4+mixin.0.8.7/5f66cc9f59b8efaa942155a3d5a30599bf6640dd/sponge-mixin-0.17.4+mixin.0.8.7.jar Service=FML Env=SERVER
+[01:19:44] [main/INFO] [ne.ne.fm.lo.FMLLoader/]: Loading FML Plugins:
+[01:19:44] [main/INFO] [ne.ne.fm.lo.FMLLoader/]:  - mods/optimization_compendium-0.1.0+26.1.2.jar > snakeyaml-2.6.jar
+[01:19:44] [main/INFO] [ne.ne.fm.lo.FMLLoader/]:  - mods/optimization_compendium-0.1.0+26.1.2.jar > dazzleconf-core-1.3.0-M2.jar
+[01:19:44] [main/INFO] [ne.ne.fm.lo.FMLLoader/]:  - /root/.gradle/caches/modules-2/files-2.1/net.neoforged/neoforge/26.1.2.114/7ba494baad5d0dd6470cf38bad318e81b2a5496f/neoforge-26.1.2.114-universal.jar > net.neoforged.neoforge-coremods-26.1.2.114.jar
+[01:19:44] [main/INFO] [ne.ne.fm.lo.FMLLoader/]:  - mods/optimization_compendium-0.1.0+26.1.2.jar > dazzleconf-ext-snakeyaml-1.3.0-M2.jar
+[01:19:44] [main/INFO] [ne.ne.fm.lo.FMLLoader/]: Building game content classloader:
+ - fastsuite (jar(mods/optimization_compendium-0.1.0+26.1.2.jar))
+ - lithium (jar(mods/lithium-neoforge-0.24.7+mc26.1.2.jar))
+ - minecraft (composite(filtered(jar(/root/home/forks/worktrees/stxck-integration/neoforge/build/moddev/artifacts/minecraft-patched-26.1.2.114.jar)), filtered(jar(/root/home/forks/worktrees/stxck-integration/neoforge/build/moddev/artifacts/minecraft-patched-26.1.2.114.jar))))
+ - mixinextras.neoforge (jar(/root/.gradle/caches/modules-2/files-2.1/net.neoforged/neoforge/26.1.2.114/7ba494baad5d0dd6470cf38bad318e81b2a5496f/neoforge-26.1.2.114-universal.jar > mixinextras-neoforge-0.5.5.jar))
+ - neoforge (composite(filtered(jar(/root/.gradle/caches/modules-2/files-2.1/net.neoforged/neoforge/26.1.2.114/7ba494baad5d0dd6470cf38bad318e81b2a5496f/neoforge-26.1.2.114-universal.jar))))
+ - net.neoforged.fml.generated (empty(VirtualJar/net.neoforged.fml.generated))
+ - staaaaaaaaaaaack (jar(mods/staaaaaaaaaaaack-neoforge-26.1.2-1.8-port.2-mixed.2.jar))
+ - stxck_verification (composite(folder(/root/home/forks/worktrees/stxck-integration/neoforge/build/classes/java/verification), folder(/root/home/forks/worktrees/stxck-integration/neoforge/build/resources/verification)))
+[01:19:44] [main/INFO] [ne.ne.fm.lo.FMLLoader/]: Built game content classloader in 85ms
+[01:19:44] [main/INFO] [Lithium/]: Loaded configuration file for Lithium: 171 options available, 0 override(s) found.
+[01:19:44] [main/WARN] [mixin/]: Reference map 'fastsuite.refmap.json' for fastsuite.mixins.json could not be read. If this is a development environment you can ignore this message
+[01:19:44] [main/WARN] [mixin/]: Reference map 'fastbench.refmap.json' for fastbench.mixins.json could not be read. If this is a development environment you can ignore this message
+[01:19:44] [main/WARN] [mixin/]: Reference map 'fastfurnace.refmap.json' for fastfurnace.mixins.json could not be read. If this is a development environment you can ignore this message
+[01:19:44] [main/WARN] [mixin/]: Reference map 'clumps.refmap.json' for clumps.mixins.json could not be read. If this is a development environment you can ignore this message
+[01:19:45] [main/INFO] [ModernFix/]: Loaded configuration file for ModernFix [unknown]: 76 options available, 0 override(s) found
+[01:19:45] [main/INFO] [ModernFix/]: Applying Nashorn fix
+[01:19:46] [main/WARN] [mixin/]: Error loading class: vazkii/quark/addons/oddities/inventory/BackpackMenu (java.lang.ClassNotFoundException: vazkii.quark.addons.oddities.inventory.BackpackMenu)
+[01:19:47] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.5).
+[01:19:51] [main/INFO] [minecraft/Bootstrap]: ModernFix reached bootstrap stage (10.61 s after launch)
+[01:20:03] [main/INFO] [minecraft/Bootstrap]: Vanilla bootstrap took 12535 milliseconds
+[01:20:05] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[01:20:05] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[01:20:05] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[01:20:05] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[01:20:05] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[01:20:05] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [time, set, time] and [time, set, timemarker] with inputs: [0, 0s, 0d, 0t]
+[01:20:05] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [time, set, timemarker] and [time, set, time] with inputs: [012]
+[01:20:05] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [time, of, clock, set, time] and [time, of, clock, set, timemarker] with inputs: [0, 0s, 0d, 0t]
+[01:20:05] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [time, of, clock, set, timemarker] and [time, of, clock, set, time] with inputs: [012]
+[01:20:05] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [waypoint, modify, waypoint, color, reset] and [waypoint, modify, waypoint, color, color] with inputs: [reset]
+[01:20:05] [modloading-worker-0/INFO] [ne.ne.ne.co.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 26.1.2.114, for MC 26.1.2
+[01:20:05] [modloading-worker-0/INFO] [me.we.se.co.ServerCore/]: [ServerCore] Loaded V1.5.19+26.1.2!
+[01:20:06] [modloading-sync-worker/WARN] [ne.ne.fm.co.ConfigTracker/CONFIG]: Configuration file /root/home/forks/worktrees/stxck-integration/neoforge/run-mixed-optimization-1792102780-SCL-same/config/staaaaaaaaaaaack-common.toml is not correct. Correcting
+[01:20:06] [main/INFO] [mojang/YggdrasilAuthenticationService]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[01:20:06] [NeoForge Version Check/INFO] [ne.ne.fm.VersionChecker/]: [clumps] Starting version check at https://updates.blamejared.com/get?n=clumps&gv=26.1.2&ml=neoforge
+[01:20:07] [NeoForge Version Check/WARN] [ne.ne.fm.VersionChecker/]: Failed to process update information
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at com.google.gson.Gson.fromJson(Gson.java:1381) ~[gson-2.13.2.jar:?] {}
+	at com.google.gson.Gson.fromJson(Gson.java:1259) ~[gson-2.13.2.jar:?] {}
+	at com.google.gson.Gson.fromJson(Gson.java:1169) ~[gson-2.13.2.jar:?] {}
+	at com.google.gson.Gson.fromJson(Gson.java:1106) ~[gson-2.13.2.jar:?] {}
+	at net.neoforged.fml.VersionChecker$1.process(VersionChecker.java:167) [loader-11.0.15.jar:11.0] {}
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) [?:?] {}
+	at net.neoforged.fml.VersionChecker$1.run(VersionChecker.java:105) [loader-11.0.15.jar:11.0] {}
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831) ~[gson-2.13.2.jar:?] {}
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509) ~[gson-2.13.2.jar:?] {}
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:199) ~[gson-2.13.2.jar:?] {}
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:161) ~[gson-2.13.2.jar:?] {}
+	at com.google.gson.Gson.fromJson(Gson.java:1358) ~[gson-2.13.2.jar:?] {}
+	... 6 more
+[01:20:09] [Worker-Main-1/INFO] [minecraft/Main]: No existing world data, creating new world
+[01:20:09] [Worker-Main-1/ERROR] [minecraft/DedicatedServerProperties]: No key layers in MapLike[{}]
+[01:20:12] [main/INFO] [minecraft/RecipeManager]: Loaded 1515 recipes
+[01:20:12] [main/INFO] [minecraft/AdvancementTree]: Loaded 1617 advancements
+[01:20:12] [main/INFO] [ne.ne.ne.co.cr.RecipePriorityManager/]: Loaded 0 recipe priority overrides
+[01:20:12] [main/INFO] [placebo/]: Registered 0 placebo:gear_sets.
+[01:20:12] [main/INFO] [placebo/]: Registered 0 placebo:brewing_mixes.
+[01:20:12] [main/WARN] [ModernFix/]: Initial datapack load took 4.957 s
+[01:20:12] [Server thread/INFO] [minecraft/DedicatedServer]: Starting minecraft server version 26.1.2
+[01:20:12] [Server thread/INFO] [minecraft/DedicatedServer]: Loading properties
+[01:20:12] [Server thread/INFO] [minecraft/DedicatedServer]: Default game type: SURVIVAL
+[01:20:12] [Server thread/INFO] [minecraft/MinecraftServer]: Generating keypair
+[01:20:12] [Server thread/INFO] [minecraft/DedicatedServer]: Starting Minecraft server on 127.0.0.1:25584
+[01:20:12] [Server thread/WARN] [minecraft/DedicatedServer]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[01:20:12] [Server thread/WARN] [minecraft/DedicatedServer]: The server will make no attempt to authenticate usernames. Beware.
+[01:20:12] [Server thread/WARN] [minecraft/DedicatedServer]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[01:20:12] [Server thread/WARN] [minecraft/DedicatedServer]: To change this, set "online-mode" to "true" in the server.properties file.
+[01:20:13] [Server thread/INFO] [minecraft/DedicatedServer]: Preparing level "world"
+[01:20:13] [Server thread/INFO] [minecraft/LoggingLevelLoadListener]: Selecting global world spawn...
+[01:20:14] [Server thread/INFO] [minecraft/LoggingLevelLoadListener]: Loading 0 persistent chunks...
+[01:20:14] [Server thread/INFO] [minecraft/LoggingLevelLoadListener]: Preparing spawn area: 100%
+[01:20:14] [Server thread/INFO] [minecraft/LoggingLevelLoadListener]: Time elapsed: 1119 ms
+[01:20:14] [Server thread/INFO] [minecraft/DedicatedServer]: Done (1.821s)! For help, type "help"
+[01:20:14] [Server thread/INFO] [Alternate Current/]: saving Alternate Current config
+[01:20:14] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[01:20:14] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[01:20:14] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[01:20:14] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[01:20:14] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[01:20:14] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[01:20:14] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved
+[01:20:15] [Server thread/INFO] [ne.ne.ne.se.pe.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
+[01:20:15] [Server thread/WARN] [ModernFix/]: Dedicated server took 34.788 seconds to load
+[01:20:17] [Server thread/INFO] [STDOUT/]: [me.frankv.staaaaaaaaaaaack.verify.Verification:functional:134]: STXCK_DEBUG first=64 second=0 ground=936 entities=[ItemEntity['Cobblestone'/6123, l='ServerLevel[world]', x=8.00, y=80.00, z=8.00]]
+[01:20:27] [Server thread/INFO] [STDOUT/]: [me.frankv.staaaaaaaaaaaack.verify.Verification:post:229]: STXCK_VERIFY immediate,100,11.299,1.579,154.740,216.3,1,1,100
+[01:20:32] [Server thread/INFO] [STDOUT/]: [me.frankv.staaaaaaaaaaaack.verify.Verification:post:229]: STXCK_VERIFY immediate,1000,65.591,2.006,195.192,223.3,1,1,1000
+[01:20:37] [Server thread/INFO] [STDOUT/]: [me.frankv.staaaaaaaaaaaack.verify.Verification:post:229]: STXCK_VERIFY immediate,5000,100.909,2.182,214.878,251.8,1,1,5000
+[01:20:42] [Server thread/INFO] [STDOUT/]: [me.frankv.staaaaaaaaaaaack.verify.Verification:post:229]: STXCK_VERIFY deferred10,100,1.517,1.528,147.198,255.3,1,10,100
+[01:20:47] [Server thread/INFO] [STDOUT/]: [me.frankv.staaaaaaaaaaaack.verify.Verification:post:229]: STXCK_VERIFY deferred10,1000,11.298,3.150,311.137,279.8,1,10,1000
+[01:20:52] [Server thread/INFO] [STDOUT/]: [me.frankv.staaaaaaaaaaaack.verify.Verification:post:229]: STXCK_VERIFY deferred10,5000,62.991,5.699,509.611,331.8,1,10,5000
+[01:20:52] [Server thread/INFO] [STDOUT/]: [me.frankv.staaaaaaaaaaaack.verify.Verification:post:233]: STXCK_VERIFY PASS assertions=6149
+[01:20:52] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping server
+[01:20:52] [Server thread/INFO] [minecraft/MinecraftServer]: Saving players
+[01:20:52] [Server thread/INFO] [minecraft/MinecraftServer]: Saving worlds
+[01:20:52] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[01:20:52] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[01:20:52] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[01:20:52] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[01:20:52] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[01:20:52] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[01:20:52] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved
+[01:20:52] [main/INFO] [ne.ne.fm.lo.FMLLoader/]: Closing FML Loader 74f143e1
+[01:20:52] [main/INFO] [ne.ne.fm.ModLoader/]: Clearing ModLoader

@@ -1,0 +1,1 @@
+PASS 8 vanilla-equivalent collision queries: ordinary drops excluded, boat/custom collidable ItemEntity retained, section moves/removal, non-item/null source fallback, no chunk loading

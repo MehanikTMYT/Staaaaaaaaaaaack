@@ -1,0 +1,1 @@
+PASS discard/repeated discard, stale extraction, nonfatal damage/repeated damage, explicit kill semantics; 3000 input = 2000 ordinary + 1000 legitimate destruction
